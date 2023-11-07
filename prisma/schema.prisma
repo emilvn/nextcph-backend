@@ -10,7 +10,52 @@ datasource db {
 	url      = env("DATABASE_URL")
 }
 
-model User {
-	id   Int    @id @default(autoincrement())
-	name String
+model Product {
+	id         String            @id @default(cuid())
+	name       String
+	price      Float
+	stock      Int
+	channel_id String
+	channel    Channel           @relation(fields: [channel_id], references: [id])
+	category   ProductCategory[]
+	sales      SaleProduct[]
+	created_at DateTime          @default(now())
+}
+
+model Channel {
+	id         String    @id @default(cuid())
+	name       String
+	products   Product[]
+	created_at DateTime  @default(now())
+}
+
+model ProductCategory {
+	id          String   @id @default(cuid())
+	product_id  String
+	category_id String
+	product     Product  @relation(fields: [product_id], references: [id], onDelete: Cascade)
+	category    Category @relation(fields: [category_id], references: [id], onDelete: Cascade)
+}
+
+model Category {
+	id         String            @id @default(cuid())
+	name       String
+	products   ProductCategory[]
+	created_at DateTime          @default(now())
+}
+
+model Sale {
+	id         String        @id @default(cuid())
+	user_id    String
+	created_at DateTime      @default(now())
+	products   SaleProduct[]
+}
+
+model SaleProduct {
+	id               String  @id @default(cuid())
+	sale_id          String
+	product_id       String
+	product_quantity Int
+	sale             Sale    @relation(fields: [sale_id], references: [id], onDelete: Cascade)
+	product          Product @relation(fields: [product_id], references: [id], onDelete: Cascade)
 }
