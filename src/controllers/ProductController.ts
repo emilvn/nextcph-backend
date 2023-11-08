@@ -2,13 +2,15 @@ import Controller from "./Controller";
 import {Method} from "./Controller";
 import type {Request, Response, NextFunction} from "express";
 import {db} from "../index";
+import {ChannelType, PrismaClient} from "@prisma/client";
 
 interface INewProduct {
 	id?: string;
 	name: string;
 	price: number;
 	stock: number;
-	channel: "COSMETIC" | "HAIR_CARE";
+	channel: ChannelType;
+	categories: string[];
 }
 
 export default class ProductController extends Controller{
@@ -45,41 +47,76 @@ export default class ProductController extends Controller{
 	}
 
 	public async getAll(req:Request, res:Response, _next:NextFunction) {
-		const products = await db.product.findMany();
-		res.json(products);
+		const {channelParam} = req.query;
+		const channel = channelParam as ChannelType;
+		if(channel) {
+			const productsWithCategories = await db.product.findMany({
+				where: {
+					channel: channel
+				},
+				include: {
+					categories: true
+				}
+			});
+			res.json(productsWithCategories);
+		}
+		else {
+			const productsWithCategories = await db.product.findMany({
+				include: {
+					categories: true
+				}
+			});
+			res.json(productsWithCategories);
+		}
 	}
 
 	public async getById(req:Request, res:Response, _next:NextFunction) {
 		const {id} = req.params;
-		const product = await db.product.findUnique({
+		const productWithCategories = await db.product.findUnique({
 			where: {
 				id: id
+			},
+			include: {
+				categories: true
 			}
 		});
-		if(!product) {
+		if(!productWithCategories) {
 			res.status(404).send("Not found");
 		}
-		res.json(product);
+		res.json(productWithCategories);
 	}
 
 	public async create(req:Request, res:Response, _next:NextFunction) {
-		const {id, name, price, stock, channel}:INewProduct = req.body;
-		const product = await db.product.create({
+		const {id, name, price, stock, channel, categories}:INewProduct = req.body;
+			// First, create the product
+		const productWithCategories = await db.product.create({
 			data: {
-				id,
 				name,
 				price,
 				stock,
-				channel
+				channel,
+				categories: {
+					create: categories.map((categoryName) => ({
+						category: {
+							connectOrCreate: {
+								where: { name: categoryName },
+								create: { name: categoryName },
+							},
+						},
+					})),
+				}
+			},
+			include: {
+				categories: true
 			}
 		});
-		res.json(product);
+		res.json(productWithCategories);
 	}
 
 	public async update(req:Request, res:Response, _next:NextFunction) {
 		const {id} = req.params;
 		const {name, price, stock, channel}:INewProduct = req.body;
-		const product = await db.product.update({
+		const productWithCategories = await db.product.update({
 			where: {
 				id: id
 			},
@@ -88,18 +125,24 @@ export default class ProductController extends Controller{
 				price,
 				stock,
 				channel
+			},
+			include: {
+				categories: true
 			}
 		});
-		res.json(product);
+		res.json(productWithCategories);
 	}
 
 	public async delete(req:Request, res:Response, _next:NextFunction) {
 		const {id} = req.params;
-		const product = await db.product.delete({
+		const productWithCategories = await db.product.delete({
 			where: {
 				id: id
+			},
+			include: {
+				categories: true
 			}
 		});
-		res.json(product);
+		res.json(productWithCategories);
 	}
 }

@@ -1,6 +1,6 @@
 import express from "express";
 import cors from "cors";
-import Server from "./server";
+import Server from "./Server";
 import { PrismaClient } from "@prisma/client";
 import ProductController from "./controllers/ProductController";
 
