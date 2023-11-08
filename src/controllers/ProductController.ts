@@ -56,9 +56,7 @@ export default class ProductController extends Controller{
 				},
 				include: {
 					categories: {
-						select: {
-							category: true
-						}
+						select: { category: true }
 					}
 				}
 			});
@@ -68,9 +66,7 @@ export default class ProductController extends Controller{
 			const productsWithCategories = await db.product.findMany({
 				include: {
 					categories: {
-						select: {
-							category: true
-						}
+						select: { category: true }
 					}
 				}
 			});
@@ -86,9 +82,7 @@ export default class ProductController extends Controller{
 			},
 			include: {
 				categories: {
-					select: {
-						category: true
-					}
+					select: { category: true }
 				}
 			}
 		});
@@ -103,11 +97,7 @@ export default class ProductController extends Controller{
 
 		const productWithCategories = await db.product.create({
 			data: {
-				id,
-				name,
-				price,
-				stock,
-				channel,
+				id, name, price, stock, channel,
 				categories: {
 					create: categories.map((categoryName) => ({
 						category: {
@@ -121,9 +111,7 @@ export default class ProductController extends Controller{
 			},
 			include: {
 				categories: {
-					select: {
-						category: true
-					}
+					select: { category: true }
 				}
 			}
 		});
@@ -134,20 +122,11 @@ export default class ProductController extends Controller{
 		const {id} = req.params;
 		const {name, price, stock, channel}:INewProduct = req.body;
 		const productWithCategories = await db.product.update({
-			where: {
-				id: id
-			},
-			data: {
-				name,
-				price,
-				stock,
-				channel
-			},
+			where: { id: id },
+			data: { name, price, stock, channel},
 			include: {
 				categories: {
-					select: {
-						category: true
-					}
+					select: { category: true }
 				}
 			}
 		});
@@ -157,14 +136,10 @@ export default class ProductController extends Controller{
 	public async delete(req:Request, res:Response, _next:NextFunction) {
 		const {id} = req.params;
 		const productWithCategories = await db.product.delete({
-			where: {
-				id: id
-			},
+			where: { id: id },
 			include: {
 				categories: {
-					select: {
-						category: true
-					}
+					select: { category: true }
 				}
 			}
 		});
