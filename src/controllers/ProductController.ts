@@ -38,6 +38,11 @@ class ProductController extends Controller{
 		},
 		{
 			path: '/:id',
+			method: Method.PATCH,
+			handler: this.update
+		},
+		{
+			path: '/:id',
 			method: Method.DELETE,
 			handler: this.delete
 		}
