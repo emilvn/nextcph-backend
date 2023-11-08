@@ -2,7 +2,7 @@ import Controller from "./Controller";
 import {Method} from "./Controller";
 import type {Request, Response, NextFunction} from "express";
 import {db} from "../index";
-import {ChannelType, PrismaClient} from "@prisma/client";
+import type {ChannelType} from "@prisma/client";
 
 interface INewProduct {
 	id?: string;
@@ -103,6 +103,7 @@ export default class ProductController extends Controller{
 
 		const productWithCategories = await db.product.create({
 			data: {
+				id,
 				name,
 				price,
 				stock,
