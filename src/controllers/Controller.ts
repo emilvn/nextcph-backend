@@ -1,7 +1,7 @@
 import {Router} from "express";
 import type {Request, NextFunction, Response} from "express";
 
-export enum Method {
+enum Method {
 	GET = 'get',
 	POST = 'post',
 	PUT = 'put',
@@ -31,4 +31,5 @@ abstract class Controller {
 
 }
 
+export {Method};
 export default Controller;
