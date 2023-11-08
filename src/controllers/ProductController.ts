@@ -13,7 +13,7 @@ interface INewProduct {
 	categories: string[];
 }
 
-export default class ProductController extends Controller{
+class ProductController extends Controller{
 	path: string = '/products';
 	routes = [
 		{
@@ -146,3 +146,5 @@ export default class ProductController extends Controller{
 		res.json(productWithCategories);
 	}
 }
+
+export default ProductController;

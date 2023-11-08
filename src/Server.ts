@@ -1,7 +1,7 @@
 import type {Application, RequestHandler} from 'express';
 import type Controller from './controllers/Controller';
 
-export default class Server{
+class Server{
   private app: Application;
   private readonly port: number;
 
@@ -28,3 +28,5 @@ export default class Server{
         });
     }
 }
+
+export default Server;

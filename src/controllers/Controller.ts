@@ -14,7 +14,7 @@ interface IRoute{
 	method: Method;
 	handler: (req:Request, res:Response, next:NextFunction) => Promise<void>;
 }
-export default abstract class Controller {
+abstract class Controller {
 	private _router: Router = Router();
 	public abstract path: string;
 	protected abstract readonly routes: IRoute[];
@@ -30,3 +30,5 @@ export default abstract class Controller {
 	}
 
 }
+
+export default Controller;
