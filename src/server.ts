@@ -1,17 +1,30 @@
-import express from 'express';
-import cors from 'cors';
-import testRouter from './routes/test';
+import type {Application, RequestHandler} from 'express';
+import type Controller from './controllers/Controller';
 
-const app = express();
-app.use(cors());
-app.use(express.json());
+export default class Server{
+  private app: Application;
+  private readonly port: number;
 
-app.get('/', (req, res) => {
-  res.send('Hello World!');
-});
+  constructor(app:Application, port: number) {
+    this.port = port;
+    this.app = app;
+  }
 
-app.use('/test', testRouter);
+  public run(): void {
+    this.app.listen(this.port, () => {
+      console.log(`Server started on port http://localhost:${this.port}`);
+    });
+  }
 
-app.listen(3000, () => {
-  console.log('Server started on port http://localhost:3000');
-});
+  public loadMiddleware(middlewares: RequestHandler[]): void {
+    middlewares.forEach((middleware) => {
+        this.app.use(middleware);
+    });
+  }
+
+    public loadControllers(controllers:Controller[]): void {
+        controllers.forEach((controller) => {
+            this.app.use(controller.path, controller.router);
+        });
+    }
+}
