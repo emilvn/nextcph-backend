@@ -55,7 +55,11 @@ export default class ProductController extends Controller{
 					channel: channel
 				},
 				include: {
-					categories: true
+					categories: {
+						select: {
+							category: true
+						}
+					}
 				}
 			});
 			res.json(productsWithCategories);
@@ -63,7 +67,11 @@ export default class ProductController extends Controller{
 		else {
 			const productsWithCategories = await db.product.findMany({
 				include: {
-					categories: true
+					categories: {
+						select: {
+							category: true
+						}
+					}
 				}
 			});
 			res.json(productsWithCategories);
@@ -77,7 +85,11 @@ export default class ProductController extends Controller{
 				id: id
 			},
 			include: {
-				categories: true
+				categories: {
+					select: {
+						category: true
+					}
+				}
 			}
 		});
 		if(!productWithCategories) {
@@ -88,7 +100,7 @@ export default class ProductController extends Controller{
 
 	public async create(req:Request, res:Response, _next:NextFunction) {
 		const {id, name, price, stock, channel, categories}:INewProduct = req.body;
-			// First, create the product
+
 		const productWithCategories = await db.product.create({
 			data: {
 				name,
@@ -107,7 +119,11 @@ export default class ProductController extends Controller{
 				}
 			},
 			include: {
-				categories: true
+				categories: {
+					select: {
+						category: true
+					}
+				}
 			}
 		});
 		res.json(productWithCategories);
@@ -127,7 +143,11 @@ export default class ProductController extends Controller{
 				channel
 			},
 			include: {
-				categories: true
+				categories: {
+					select: {
+						category: true
+					}
+				}
 			}
 		});
 		res.json(productWithCategories);
@@ -140,7 +160,11 @@ export default class ProductController extends Controller{
 				id: id
 			},
 			include: {
-				categories: true
+				categories: {
+					select: {
+						category: true
+					}
+				}
 			}
 		});
 		res.json(productWithCategories);
