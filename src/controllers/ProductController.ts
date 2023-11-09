@@ -27,6 +27,77 @@ const UpdateProductSchema = z.object({
 
 class ProductController extends Controller{
 	path: string = '/products';
+	repository: ProductRepository;
+	constructor() {
+		super();
+		this.repository = new ProductRepository();
+	}
+
+	public getAll = async (req:Request, res:Response, next:NextFunction) => {
+		try{
+			const {channelParam} = req.query;
+			const channel = channelParam as ChannelType;
+			let productsWithCategories;
+			if(channel) {
+				productsWithCategories = await this.repository.getByChannel(channel);
+			}
+			else {
+				productsWithCategories = await this.repository.getAll();
+			}
+			if(productsWithCategories.length === 0) {
+				res.status(404).send("No products found");
+			}
+			else {
+				res.json(productsWithCategories);
+			}
+		}catch(e){
+			next(e);
+		}
+	}
+
+	public getById = async (req:Request, res:Response, next:NextFunction) => {
+		try{
+			const {id} = req.params;
+			const productWithCategories = await this.repository.getById(id);
+			if(!productWithCategories) res.status(404).send("Not found");
+			else res.json(productWithCategories);
+		}catch(e){
+			next(e);
+		}
+	}
+
+	public create = async (req:Request, res:Response, next:NextFunction) => {
+		try{
+			const data:INewProduct = NewProductSchema.parse(req.body);
+			const productWithCategories = await this.repository.create(data);
+			res.status(201).json(productWithCategories);
+		}catch(e){
+			next(e);
+		}
+	}
+
+	public update = async (req:Request, res:Response, next:NextFunction) => {
+		try{
+			const {id} = req.params;
+			const data:IUpdateProduct = UpdateProductSchema.parse(req.body);
+			const productWithCategories = await this.repository.update(id, data);
+			res.json(productWithCategories);
+		}
+		catch(e){
+			next(e);
+		}
+	}
+
+	public delete = async (req:Request, res:Response, next:NextFunction) => {
+		try{
+			const {id} = req.params;
+			const productWithCategories = await this.repository.delete(id);
+			res.json(productWithCategories);
+		}catch (e) {
+			next(e);
+		}
+	}
+
 	routes = [
 		{
 			path: '/',
@@ -59,70 +130,6 @@ class ProductController extends Controller{
 			handler: this.delete
 		}
 	];
-	constructor() {
-		super();
-	}
-
-	public async getAll(req:Request, res:Response, next:NextFunction) {
-		try{
-			const {channelParam} = req.query;
-			const channel = channelParam as ChannelType;
-			let productsWithCategories;
-			if(channel) {
-				productsWithCategories = await ProductRepository.getByChannel(channel);
-			}
-			else {
-				productsWithCategories = await ProductRepository.getAll();
-			}
-			if(productsWithCategories.length === 0) {
-				res.status(404).send("No products found");
-			}
-			else {
-				res.json(productsWithCategories);
-			}
-		}catch(e){
-			next(e);
-		}
-	}
-
-	public async getById(req:Request, res:Response, next:NextFunction) {
-		try{
-			const {id} = req.params;
-			const productWithCategories = await ProductRepository.getById(id);
-			if(!productWithCategories) res.status(404).send("Not found");
-			else res.json(productWithCategories);
-		}catch(e){
-			next(e);
-		}
-	}
-
-	public async create(req:Request, res:Response, next:NextFunction) {
-		try{
-			const data:INewProduct = NewProductSchema.parse(req.body);
-			const productWithCategories = await ProductRepository.create(data);
-			res.status(201).json(productWithCategories);
-		}catch(e){
-			next(e);
-		}
-	}
-
-	public async update(req:Request, res:Response, next:NextFunction) {
-		try{
-			const {id} = req.params;
-			const data:IUpdateProduct = UpdateProductSchema.parse(req.body);
-			const productWithCategories = await ProductRepository.update(id, data);
-			res.json(productWithCategories);
-		}
-		catch(e){
-			next(e);
-		}
-	}
-
-	public async delete(req:Request, res:Response, _next:NextFunction) {
-		const {id} = req.params;
-		const productWithCategories = await ProductRepository.delete(id);
-		res.json(productWithCategories);
-	}
 }
 
 export default ProductController;

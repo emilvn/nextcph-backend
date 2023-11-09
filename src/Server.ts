@@ -11,25 +11,25 @@ class Server{
 		this.app = app;
 	}
 
-	public run(): void {
+	public run = () => {
 		this.app.listen(this.port, () => {
   			console.log(`Server started on port http://localhost:${this.port}`);
 		});
 	}
 
-	public loadMiddleware(middlewares: RequestHandler[]): void {
+	public loadMiddleware = (middlewares: RequestHandler[]) => {
 		middlewares.forEach((middleware) => {
   			this.app.use(middleware);
 		});
 	}
 
-	public loadControllers(controllers:Controller[]): void {
+	public loadControllers = (controllers:Controller[]) => {
 		controllers.forEach((controller) => {
   			this.app.use(controller.path, controller.router);
 		});
 	}
 
-	public loadGlobalErrorHandler():void {
+	public loadGlobalErrorHandler = () => {
 		this.app.use((err:any, _req:Request, res:Response, _next:NextFunction) => {
 			if(err instanceof ZodError){
 				res.status(400).json({
@@ -43,12 +43,12 @@ class Server{
 			const status = err.statusCode || 500;
 			const message = err.message ||"Something went wrong";
 			const name = err.name || "";
-			res.status(status).json(JSON.stringify({
+			res.status(status).json({
 				success: false,
 				name: name,
 				status: status,
 				message: message
-			}));
+			});
 		});
 	}
 }

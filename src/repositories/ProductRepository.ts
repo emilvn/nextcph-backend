@@ -1,9 +1,12 @@
-import {db} from "../index";
-import {ChannelType} from "@prisma/client";
+import {ChannelType, PrismaClient} from "@prisma/client";
 import {INewProduct, IUpdateProduct} from "../types/types";
 class ProductRepository{
-	static async getAll(){
-		return db.product.findMany({
+	private db: PrismaClient;
+	constructor() {
+		this.db = new PrismaClient();
+	}
+	public getAll = () => {
+		return this.db.product.findMany({
 			include: {
 				categories: {
 					select: {category: true}
@@ -11,8 +14,9 @@ class ProductRepository{
 			}
 		});
 	}
-	static async getByChannel(channel: ChannelType){
-		return db.product.findMany({
+
+	public getByChannel = (channel: ChannelType) => {
+		return this.db.product.findMany({
 			where: {
 				channel: channel
 			},
@@ -23,8 +27,8 @@ class ProductRepository{
 			}
 		});
 	}
-	static async getById(id: string){
-		return db.product.findUnique({
+	public getById = (id: string) => {
+		return this.db.product.findUnique({
 			where: {
 				id: id
 			},
@@ -35,9 +39,9 @@ class ProductRepository{
 			}
 		});
 	}
-	static async create(data: INewProduct){
+	public create = (data: INewProduct) => {
 		const {id, name, price, stock, channel, categories} = data;
-		return db.product.create({
+		return this.db.product.create({
 			data: {
 				id, name, price, stock, channel,
 				categories: {
@@ -58,7 +62,7 @@ class ProductRepository{
 			}
 		});
 	}
-	static async update(id: string, data: IUpdateProduct){
+	public update = (id: string, data: IUpdateProduct) => {
 		const {name, price, stock, channel} = data;
 		const UpdateData:Record<string, any> = {};
 		if(name !== undefined) UpdateData.name = name;
@@ -66,7 +70,7 @@ class ProductRepository{
 		if(stock !== undefined) UpdateData.stock = stock;
 		if(channel !== undefined) UpdateData.channel = channel;
 
-		return db.product.update({
+		return this.db.product.update({
 			where: { id: id },
 			data: UpdateData,
 			include: {
@@ -76,8 +80,8 @@ class ProductRepository{
 			}
 		});
 	}
-	static async delete(id: string){
-		return db.product.delete({
+	public delete = (id: string) => {
+		return this.db.product.delete({
 			where: { id: id },
 			include: {
 				categories: {

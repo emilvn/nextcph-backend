@@ -18,6 +18,7 @@ abstract class Controller {
 	private _router: Router = Router();
 	public abstract path: string;
 	protected abstract readonly routes: IRoute[];
+	protected abstract readonly repository: any;
 
 	private initRouter(): void {
 		this.routes.forEach((route) => {
