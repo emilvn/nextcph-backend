@@ -18,4 +18,5 @@ const middlewares = [
 
 server.loadMiddleware(middlewares);
 server.loadControllers(controllers);
+server.loadGlobalErrorHandler();
 server.run();
