@@ -4,7 +4,7 @@
   "description": "",
   "main": "src/index.ts",
   "scripts": {
-    "start": "echo 'Current directory: $(pwd)' && ls -l && node dist/index.js",
+    "start": "echo 'Current directory: $(pwd)' && ls -l src && node dist/index.js",
     "dev": "nodemon --watch 'src/**/*.ts' --exec 'ts-node' src/index.ts",
     "build": "tsc"
   },
