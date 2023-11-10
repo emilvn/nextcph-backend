@@ -35,17 +35,11 @@ class ProductController extends Controller{
 		this.repository = new ProductRepository(db);
 	}
 
-	public getAll = async (req:Request, res:Response, next:NextFunction) => {
+	public getByChannel = async (req:Request, res:Response, next:NextFunction) => {
 		try{
 			const {channel} = req.query;
-			let productsWithCategories;
-			if(channel) {
-				const channelParam = ChannelSchema.parse(channel);
-				productsWithCategories = await this.repository.getByChannel(channelParam);
-			}
-			else {
-				productsWithCategories = await this.repository.getAll();
-			}
+			const channelParam = ChannelSchema.parse(channel);
+			const productsWithCategories = await this.repository.getByChannel(channelParam);
 			if(productsWithCategories.length === 0) {
 				res.status(404).send("No products found");
 			}
@@ -104,7 +98,7 @@ class ProductController extends Controller{
 		{
 			path: '/',
 			method: Method.GET,
-			handler: this.getAll
+			handler: this.getByChannel
 		},
 		{
 			path: '/:id',

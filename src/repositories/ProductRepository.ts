@@ -5,15 +5,6 @@ class ProductRepository{
 	constructor(db:PrismaClient) {
 		this.db = db;
 	}
-	public getAll = () => {
-		return this.db.product.findMany({
-			include: {
-				categories: {
-					select: {category: true}
-				}
-			}
-		});
-	}
 
 	public getByChannel = (channel: ChannelType) => {
 		return this.db.product.findMany({
