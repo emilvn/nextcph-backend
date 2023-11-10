@@ -1,8 +1,10 @@
 import {ChannelType, PrismaClient} from "@prisma/client";
 import {INewProduct, IUpdateProduct} from "../types/types";
-class ProductRepository{
-	private db: PrismaClient;
+import Repository from "./Repository";
+class ProductRepository extends Repository{
+	db: PrismaClient;
 	constructor(db:PrismaClient) {
+		super();
 		this.db = db;
 	}
 
