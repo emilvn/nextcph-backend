@@ -1,7 +1,7 @@
 import Controller from "./Controller";
 import {Method} from "./Controller";
 import type {Request, Response, NextFunction} from "express";
-import type {ChannelType} from "@prisma/client";
+import type {ChannelType, PrismaClient} from "@prisma/client";
 import {z} from "zod";
 import type {INewProduct, IUpdateProduct} from "../types/types";
 import ProductRepository from "../repositories/ProductRepository";
@@ -25,21 +25,23 @@ const UpdateProductSchema = z.object({
 	channel: z.enum(["HAIR_CARE", "COSMETIC"]).optional(),
 });
 
+const ChannelSchema = z.enum(["HAIR_CARE", "COSMETIC"]);
+
 class ProductController extends Controller{
 	path: string = '/products';
 	repository: ProductRepository;
-	constructor() {
+	constructor(db:PrismaClient) {
 		super();
-		this.repository = new ProductRepository();
+		this.repository = new ProductRepository(db);
 	}
 
 	public getAll = async (req:Request, res:Response, next:NextFunction) => {
 		try{
-			const {channelParam} = req.query;
-			const channel = channelParam as ChannelType;
+			const {channel} = req.query;
 			let productsWithCategories;
 			if(channel) {
-				productsWithCategories = await this.repository.getByChannel(channel);
+				const channelParam = ChannelSchema.parse(channel);
+				productsWithCategories = await this.repository.getByChannel(channelParam);
 			}
 			else {
 				productsWithCategories = await this.repository.getAll();

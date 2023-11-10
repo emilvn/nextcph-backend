@@ -2,8 +2,8 @@ import {ChannelType, PrismaClient} from "@prisma/client";
 import {INewProduct, IUpdateProduct} from "../types/types";
 class ProductRepository{
 	private db: PrismaClient;
-	constructor() {
-		this.db = new PrismaClient();
+	constructor(db:PrismaClient) {
+		this.db = db;
 	}
 	public getAll = () => {
 		return this.db.product.findMany({

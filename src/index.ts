@@ -2,12 +2,14 @@ import express from "express";
 import cors from "cors";
 import Server from "./Server";
 import ProductController from "./controllers/ProductController";
+import { PrismaClient } from "@prisma/client";
 
 const app = express();
 const server = new Server(app, 3000);
+const db = new PrismaClient();
 
 const controllers = [
-	new ProductController()
+	new ProductController(db)
 ];
 
 const middlewares = [
