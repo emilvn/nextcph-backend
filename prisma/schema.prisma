@@ -10,23 +10,21 @@ datasource db {
 	url      = env("DATABASE_URL")
 }
 
+enum ChannelType {
+	COSMETIC
+	HAIR_CARE
+}
+
 model Product {
 	id         String            @id @default(cuid())
 	name       String
 	price      Float
 	stock      Int
-	channel_id String
-	channel    Channel           @relation(fields: [channel_id], references: [id])
-	category   ProductCategory[]
+	channel    ChannelType
+	categories ProductCategory[]
 	sales      SaleProduct[]
 	created_at DateTime          @default(now())
-}
-
-model Channel {
-	id         String    @id @default(cuid())
-	name       String
-	products   Product[]
-	created_at DateTime  @default(now())
+	updated_at DateTime          @updatedAt
 }
 
 model ProductCategory {
@@ -39,9 +37,10 @@ model ProductCategory {
 
 model Category {
 	id         String            @id @default(cuid())
-	name       String
+	name       String            @unique
 	products   ProductCategory[]
 	created_at DateTime          @default(now())
+	updated_at DateTime          @updatedAt
 }
 
 model Sale {
@@ -49,6 +48,8 @@ model Sale {
 	user_id    String
 	created_at DateTime      @default(now())
 	products   SaleProduct[]
+
+	@@index([user_id], name: "user_id")
 }
 
 model SaleProduct {
