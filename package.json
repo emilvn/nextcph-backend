@@ -4,8 +4,8 @@
   "description": "",
   "main": "src/Server.ts",
   "scripts": {
-    "start": "tsc src/index.ts",
-    "dev": "nodemon src/index.ts",
+    "start": "node dist/index.js",
+    "dev": "nodemon --watch 'src/**/*.ts' --exec 'ts-node' src/index.ts",
     "build": "tsc"
   },
   "keywords": [],
