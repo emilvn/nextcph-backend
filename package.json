@@ -2,9 +2,10 @@
   "name": "nextcph-backend",
   "version": "1.0.0",
   "description": "",
-  "main": "src/server.ts",
+  "main": "src/Server.ts",
   "scripts": {
-    "start" : "ts-node-esm src/server.ts"
+    "start": "ts-node-esm src/index.ts",
+    "dev": "nodemon src/index.ts"
   },
   "keywords": [],
   "author": "",
@@ -20,6 +21,7 @@
   "dependencies": {
     "@prisma/client": "^5.5.2",
     "cors": "^2.8.5",
-    "express": "^4.18.2"
+    "express": "^4.18.2",
+    "zod": "^3.22.4"
   }
 }
