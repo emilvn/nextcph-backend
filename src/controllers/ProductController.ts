@@ -1,7 +1,7 @@
 import Controller from "./Controller";
 import {Method} from "./Controller";
 import type {Request, Response, NextFunction} from "express";
-import type {ChannelType, PrismaClient} from "@prisma/client";
+import type {PrismaClient} from "@prisma/client";
 import {z} from "zod";
 import type {INewProduct, IUpdateProduct} from "../types/types";
 import ProductRepository from "../repositories/ProductRepository";

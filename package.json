@@ -5,7 +5,9 @@
   "main": "src/Server.ts",
   "scripts": {
     "start": "ts-node-esm src/index.ts",
-    "dev": "nodemon src/index.ts"
+    "dev": "nodemon src/index.ts",
+    "build": "tsc",
+    "vercel-build": "npm run build"
   },
   "keywords": [],
   "author": "",
