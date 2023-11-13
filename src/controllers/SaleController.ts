@@ -120,3 +120,5 @@ class SaleController extends Controller{
 		}
 	];
 }
+
+export default SaleController;
