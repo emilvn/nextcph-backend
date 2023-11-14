@@ -15,12 +15,12 @@ class SaleController extends Controller{
     }
 
     public getByUserId = async (req:Request, res:Response, next:NextFunction) => {
-        const {userId} = req.query;
+        const {user_id} = req.query;
         const {channel} = req.query;
-        if (!!userId) {
+        if (!!user_id) {
             try{
                 const channelParam = ChannelSchema.parse(channel);
-                const userIdParam = UserIdSchema.parse(userId);
+                const userIdParam = UserIdSchema.parse(user_id);
                 const sales = await this.repository.getByUserId(userIdParam, channelParam);
 
                 if(!sales) {

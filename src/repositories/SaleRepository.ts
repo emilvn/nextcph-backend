@@ -19,6 +19,13 @@ class SaleRepository extends Repository {
                     }   
                 }
             },
+            include: {
+                products: {
+                    include: {
+                        product: true
+                    }
+                }
+            }
         });
     };
     public getById = (id:string) => {
@@ -46,6 +53,13 @@ class SaleRepository extends Repository {
                         }
                     }   
                 },
+            },
+            include: {
+                products: {
+                    include: {
+                        product: true
+                    }
+                }
             }
         });
     }
