@@ -2,10 +2,11 @@
   "name": "nextcph-backend",
   "version": "1.0.0",
   "description": "",
-  "main": "src/Server.ts",
+  "main": "src/index.ts",
   "scripts": {
-    "start": "ts-node-esm src/index.ts",
-    "dev": "nodemon src/index.ts"
+    "start": "ls -l dist && node dist/index.js",
+    "dev": "nodemon src/index.ts",
+    "build": "tsc -p ."
   },
   "keywords": [],
   "author": "",
