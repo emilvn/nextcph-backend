@@ -1,12 +1,10 @@
 import Controller from "./Controller";
 import {Method} from "./Controller";
 import type {Request, Response, NextFunction} from "express";
-import type {ChannelType, PrismaClient} from "@prisma/client";
-import {z} from "zod";
+import type {PrismaClient} from "@prisma/client";
 import type {INewSale} from "../types/types";
 import SaleRepository from "../repositories/SaleRepository";
 import { ChannelSchema, UserIdSchema, NewSaleSchema } from "../validation/schemas";
-import { setDefaultResultOrder } from "dns";
 
 class SaleController extends Controller{ 
     path: string = "/sale";
@@ -22,7 +20,7 @@ class SaleController extends Controller{
         if (!!userId) {
             try{
                 const channelParam = ChannelSchema.parse(channel);
-                const userIdParam = UserIdSchema.parse(userId)
+                const userIdParam = UserIdSchema.parse(userId);
                 const sales = await this.repository.getByUserId(userIdParam, channelParam);
 
                 if(!sales) {
