@@ -19,13 +19,8 @@ interface IUpdateProduct {
 
 interface ISaleProduct {
 	id: string;
-	name: string;
-	price: number;
 	quantity: number;
 	channel: ChannelType;
-	categories: {
-		category: ICategory;
-	}[]
 }
 
 interface ICategory {

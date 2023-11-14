@@ -65,24 +65,28 @@ class SaleRepository extends Repository {
     }
     public create = async (data: INewSale) => {{
         const { user_id, products } = data;
-        // First, create the sale and get the newly generated id
-        const newSale = await this.db.sale.create({
-            data: {
-                user_id
-            }
+
+        const createdSale = await this.db.$transaction(async (prisma) => {
+            //create sale
+            const newSale = await prisma.sale.create({
+                data: {
+                    user_id
+                }
+            });
+
+            // create sale product relations
+            products.map(async (product) =>
+                await this.db.saleProduct.create({
+                    data: {
+                        sale_id: newSale.id,
+                        product_id: product.id,
+                        product_quantity: product.quantity
+                    }
+                }));
+
+            return newSale;
         });
-
-        // Then, connect the products to the sale using the new id
-        products.map(async (product) =>
-            await this.db.saleProduct.create({
-            data: {
-                sale_id: newSale.id,
-                product_id: product.id,
-                product_quantity: product.quantity
-            }
-        }));
-
-        return this.getById(newSale.id);
+        return this.getById(createdSale.id);
     }}
 
     public delete = (id: string) => {
