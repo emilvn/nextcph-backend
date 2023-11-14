@@ -1,5 +1,6 @@
 import {Router} from "express";
 import type {Request, NextFunction, Response} from "express";
+import Repository from "../repositories/Repository";
 
 enum Method {
 	GET = 'get',
@@ -18,7 +19,7 @@ abstract class Controller {
 	private _router: Router = Router();
 	public abstract path: string;
 	protected abstract readonly routes: IRoute[];
-	protected abstract readonly repository: any;
+	protected abstract readonly repository: Repository;
 
 	private initRouter(): void {
 		this.routes.forEach((route) => {
