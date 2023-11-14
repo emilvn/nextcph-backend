@@ -59,4 +59,6 @@ model SaleProduct {
     product_quantity Int
     sale             Sale    @relation(fields: [sale_id], references: [id], onDelete: Cascade)
     product          Product @relation(fields: [product_id], references: [id], onDelete: Cascade)
+
+    @@unique([sale_id, product_id])
 }

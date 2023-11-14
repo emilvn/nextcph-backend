@@ -17,11 +17,11 @@ interface IUpdateProduct {
 	channel?: ChannelType;
 }
 
-interface IProduct {
+interface ISaleProduct {
 	id: string;
 	name: string;
 	price: number;
-	stock: number;
+	quantity: number;
 	channel: ChannelType;
 	categories: {
 		category: ICategory;
@@ -36,7 +36,7 @@ interface ICategory {
 interface INewSale {
 	id?: string;
 	user_id: string;
-	products: IProduct[];
+	products: ISaleProduct[];
 }
 
 export {INewProduct, IUpdateProduct, INewSale}

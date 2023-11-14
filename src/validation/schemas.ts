@@ -20,11 +20,11 @@ const UpdateProductSchema = z.object({
 	channel: z.enum(["HAIR_CARE", "COSMETIC"]).optional(),
 });
 
-const ProductSchema = z.object({
+const SaleProductSchema = z.object({
 	id: z.string(),
 	name: z.string().min(1).max(191),
 	price: z.number().positive(),
-	stock: z.number().min(0),
+	quantity: z.number().min(1),
 	channel: z.enum(["HAIR_CARE", "COSMETIC"]),
 	categories: z.array(z.object({
         category: z.object({
@@ -37,7 +37,7 @@ const ProductSchema = z.object({
 const NewSaleSchema = z.object({
     id: z.string().optional(),
     user_id: z.string(),
-    products: z.array(ProductSchema),
+    products: z.array(SaleProductSchema),
 })
 
 const ChannelSchema = z.enum(["HAIR_CARE", "COSMETIC"]);

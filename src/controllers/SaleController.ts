@@ -7,7 +7,7 @@ import SaleRepository from "../repositories/SaleRepository";
 import { ChannelSchema, UserIdSchema, NewSaleSchema } from "../validation/schemas";
 
 class SaleController extends Controller{ 
-    path: string = "/sale";
+    path: string = "/sales";
     repository: SaleRepository;
     constructor(db:PrismaClient) {
         super();

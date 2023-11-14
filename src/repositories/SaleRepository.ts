@@ -1,4 +1,4 @@
-import {ChannelType, PrismaClient} from "@prisma/client";
+import {ChannelType, PrismaClient, Sale, SaleProduct} from "@prisma/client";
 import {INewSale} from "../types/types";
 import Repository from "./Repository";
 
@@ -25,6 +25,13 @@ class SaleRepository extends Repository {
         return this.db.sale.findUnique({
             where: {
                 id: id
+            },
+            include: {
+                products: {
+                    include: {
+                        product: true
+                    }
+                }
             }
         });
     }
@@ -42,17 +49,28 @@ class SaleRepository extends Repository {
             }
         });
     }
-    public create = (data: INewSale) => {
-        const {id, user_id, products} = data;
-        return this.db.sale.create({
+    public create = async (data: INewSale) => {{
+        const { user_id, products } = data;
+        // First, create the sale and get the newly generated id
+        const newSale = await this.db.sale.create({
             data: {
-                id, user_id,
-                products: {
-                    connect: products.map(product => ({ id: product.id })),
-                }
+                user_id
             }
         });
-    }
+
+        // Then, connect the products to the sale using the new id
+        products.map(async (product) =>
+            await this.db.saleProduct.create({
+            data: {
+                sale_id: newSale.id,
+                product_id: product.id,
+                product_quantity: product.quantity
+            }
+        }));
+
+        return this.getById(newSale.id);
+    }}
+
     public delete = (id: string) => {
 		return this.db.sale.delete({
 			where: { id: id }
