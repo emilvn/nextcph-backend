@@ -36,7 +36,11 @@ class Server{
 					success: false,
 					name: err.name,
 					status: 400,
-					errors: err.issues
+					errors: err.issues.map((issue) => ({
+						code: issue.code,
+						message: issue.message,
+						path: issue.path
+					}))
 				});
 				return;
 			}
