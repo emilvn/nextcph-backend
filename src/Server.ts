@@ -1,6 +1,7 @@
 import type {Application, RequestHandler, Request, Response, NextFunction} from 'express';
 import type Controller from './controllers/Controller';
 import {ZodError} from "zod";
+import { PrismaClientKnownRequestError } from '@prisma/client/runtime/library';
 
 class Server{
 	private app: Application;

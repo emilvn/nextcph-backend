@@ -23,7 +23,7 @@
     "stock": 13,
     "channel": "COSMETIC",
     "categories": [
-      "NORMAL - KOMBINERET HUD"
+      "NORMAL - KOMBINERET HUD", "ALLE HUDTYPER, OGSÅ FØLSOM HUD"
     ]
   },
   {
@@ -48,15 +48,6 @@
     "name": "Soothing Toning Lotion, 200ml",
     "price": 299,
     "stock": 10,
-    "channel": "COSMETIC",
-    "categories": [
-      "ALLE HUDTYPER, OGSÅ FØLSOM HUD"
-    ]
-  },
-  {
-    "name": "Sheer Refining Fluid, SPF 40, 50ml",
-    "price": 399,
-    "stock": 13,
     "channel": "COSMETIC",
     "categories": [
       "ALLE HUDTYPER, OGSÅ FØLSOM HUD"
