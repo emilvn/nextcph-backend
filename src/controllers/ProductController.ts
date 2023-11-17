@@ -51,6 +51,17 @@ class ProductController extends Controller{
 		}
 	}
 
+	public createMany = async (req:Request, res:Response, next:NextFunction) => {
+		try{
+			const data:INewProduct[] = req.body;
+			const productsWithCategories = await this.repository.createMany(data);
+			res.status(201).json(productsWithCategories);
+		}catch(e){
+			next(e);
+		}
+
+	}
+
 	public update = async (req:Request, res:Response, next:NextFunction) => {
 		try{
 			const {id} = req.params;
@@ -103,6 +114,11 @@ class ProductController extends Controller{
 			path: '/:id',
 			method: Method.DELETE,
 			handler: this.delete
+		},
+		{
+			path: '/bulk',
+			method: Method.POST,
+			handler: this.createMany
 		}
 	];
 }

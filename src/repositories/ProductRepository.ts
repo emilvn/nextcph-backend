@@ -55,6 +55,27 @@ class ProductRepository extends Repository{
 			}
 		});
 	}
+
+	public createMany = async (data: INewProduct[]) => {
+		return this.db.$transaction(async (db) => {
+				const newProducts = Promise.all(data.map((product) => {
+					return this.create(product);
+				}));
+				return db.product.findMany({
+					where: {
+						id: {
+							in: (await newProducts).map((product) => product.id)
+						}
+					},
+					include: {
+						categories: {
+							select: { category: true }
+						}
+					}
+				});
+			});
+
+	}
 	public update = (id: string, data: IUpdateProduct) => {
 		const {name, price, stock, channel} = data;
 		const UpdateData:Record<string, any> = {};
