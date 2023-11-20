@@ -16,19 +16,15 @@ interface IRoute{
 	handler: (req:Request, res:Response, next:NextFunction) => Promise<void>;
 }
 abstract class Controller {
-	private _router: Router = Router();
+	public readonly router: Router = Router();
 	public abstract path: string;
 	protected abstract readonly routes: IRoute[];
 	protected abstract readonly repository: Repository;
 
-	private initRouter(): void {
+	public initRouter(): void {
 		this.routes.forEach((route) => {
-			this._router[route.method](route.path, route.handler);
+			this.router[route.method](route.path, route.handler);
 		});
-	}
-	public get router(): Router {
-		this.initRouter();
-		return this._router;
 	}
 
 }
