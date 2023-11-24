@@ -1,4 +1,4 @@
-import {ChannelType, Product} from "@prisma/client";
+import {ChannelType} from "@prisma/client";
 
 interface INewProduct {
 	id?: string;
