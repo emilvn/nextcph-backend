@@ -86,7 +86,7 @@ class ProductController extends Controller{
 
 	routes = [
 		{
-			path: '/',
+			path: '',
 			method: Method.GET,
 			handler: this.getByChannel
 		},
