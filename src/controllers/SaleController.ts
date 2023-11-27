@@ -92,12 +92,12 @@ class SaleController extends Controller{
     
     routes = [
         {
-			path: '',
+			path: '/',
 			method: Method.GET,
 			handler: this.getByUserId
 		},
 		{
-			path: '',
+			path: '/',
 			method: Method.GET,
 			handler: this.getByChannel
 		},
