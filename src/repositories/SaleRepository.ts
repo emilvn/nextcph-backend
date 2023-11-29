@@ -1,14 +1,14 @@
-import {ChannelType, PrismaClient, Sale, SaleProduct} from "@prisma/client";
-import {INewSale} from "../types/types";
+import { ChannelType, PrismaClient, Sale, SaleProduct } from "@prisma/client";
+import { INewSale } from "../types/types";
 import Repository from "./Repository";
 
 class SaleRepository extends Repository {
     db: PrismaClient;
-    constructor(db:PrismaClient) {
+    constructor(db: PrismaClient) {
         super();
         this.db = db;
     }
-    public getByChannel = (channel:ChannelType) => {
+    public getByChannel = (channel: ChannelType) => {
         return this.db.sale.findMany({
             where: {
                 products: {
@@ -16,7 +16,7 @@ class SaleRepository extends Repository {
                         product: {
                             channel: channel
                         }
-                    }   
+                    }
                 }
             },
             include: {
@@ -28,7 +28,7 @@ class SaleRepository extends Repository {
             }
         });
     };
-    public getById = (id:string) => {
+    public getById = (id: string) => {
         return this.db.sale.findUnique({
             where: {
                 id: id
@@ -42,7 +42,7 @@ class SaleRepository extends Repository {
             }
         });
     }
-    public getByUserId = (user_id: string, channel:ChannelType) => {
+    public getByUserId = (user_id: string, channel: ChannelType) => {
         return this.db.sale.findMany({
             where: {
                 user_id: user_id,
@@ -51,7 +51,7 @@ class SaleRepository extends Repository {
                         product: {
                             channel: channel
                         }
-                    }   
+                    }
                 },
             },
             include: {
@@ -63,14 +63,15 @@ class SaleRepository extends Repository {
             }
         });
     }
-    public create = async (data: INewSale) => {{
-        const { user_id, products } = data;
+    public create = async (data: INewSale) => {
+        const { created_at, user_id, products } = data;
 
         const createdSale = await this.db.$transaction(async (prisma) => {
             //create sale
             const newSale = await prisma.sale.create({
                 data: {
-                    user_id
+                    user_id,
+                    created_at
                 }
             });
 
@@ -87,13 +88,39 @@ class SaleRepository extends Repository {
             return newSale;
         });
         return this.getById(createdSale.id);
-    }}
+    }
+
+
+    public createMany = async (data: INewSale[]) => {
+        return this.db.$transaction(async (db) => {
+            const newSales = Promise.all(data.map((sale) => {
+                return this.create(sale);
+            }));
+
+            const ids = (await newSales).map((sale) => sale?.id).filter((id): id is string => id !== undefined);
+
+            return db.sale.findMany({
+                where: {
+                    id: {
+                        in: ids
+                    }
+                },
+                include: {
+                    products: {
+                        include: {
+                            product: true
+                        }
+                    }
+                }
+            });
+        });
+    }
 
     public delete = (id: string) => {
-		return this.db.sale.delete({
-			where: { id: id }
-		});
-	}
+        return this.db.sale.delete({
+            where: { id: id }
+        });
+    }
 }
 
 export default SaleRepository;
