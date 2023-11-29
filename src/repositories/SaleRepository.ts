@@ -1,4 +1,4 @@
-import {ChannelType, PrismaClient, Sale, SaleProduct} from "@prisma/client";
+import {ChannelType, PrismaClient} from "@prisma/client";
 import {INewSale} from "../types/types";
 import Repository from "./Repository";
 
