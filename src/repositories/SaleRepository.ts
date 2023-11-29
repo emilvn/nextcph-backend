@@ -8,7 +8,10 @@ class SaleRepository extends Repository {
         super();
         this.db = db;
     }
-    public getByChannel = (channel:ChannelType) => {
+    public getByChannel = (channel:ChannelType, page?:number, pageSize?:number) => {
+        const limit = pageSize || 20;
+        const offset = !!page && !!pageSize ? (page - 1) * pageSize : 0;
+
         return this.db.sale.findMany({
             where: {
                 products: {
@@ -25,7 +28,9 @@ class SaleRepository extends Repository {
                         product: true
                     }
                 }
-            }
+            },
+            take: limit,
+            skip: offset
         });
     };
     public getById = (id:string) => {
