@@ -81,7 +81,7 @@ class SaleController extends Controller {
 
     public createMany = async (req: Request, res: Response, next: NextFunction) => {
         try {
-            const data: INewSale[] = req.body;
+            const data: INewSale[] = req.body.map((sale:INewSale) => NewSaleSchema.parse(sale));
             const sales = await this.repository.createMany(data);
             res.status(201).json(sales);
         } catch (e) {
