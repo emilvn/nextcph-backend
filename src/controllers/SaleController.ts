@@ -100,6 +100,23 @@ class SaleController extends Controller {
         }
     }
 
+    public getRawSalesData = async (req: Request, res: Response, next: NextFunction) => {
+        try {
+            const { channel } = req.query;
+            const channelParam = ChannelSchema.parse(channel);
+            
+            const rawSalesData = await this.repository.getRawSalesData(channelParam);
+
+            if (rawSalesData.length === 0) {
+                res.status(404).send("No sales data found");
+            } else {
+                res.json(rawSalesData);
+            }
+        } catch (e) {
+            next(e);
+        }
+    };
+
 
     routes = [
         {
@@ -131,7 +148,12 @@ class SaleController extends Controller {
             path: '/bulk',
             method: Method.POST,
             handler: this.createMany
-        }
+        },
+        {
+            path: '/rawdata',
+            method: Method.GET,
+            handler: this.getRawSalesData,
+        },
     ];
 }
 

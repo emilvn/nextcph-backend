@@ -121,6 +121,27 @@ class SaleRepository extends Repository {
             where: { id: id }
         });
     }
+
+    public getRawSalesData = async (channel: ChannelType) => {
+        return this.db.sale.findMany({
+            where: {
+                products: {
+                    every: {
+                        product: {
+                            channel: channel
+                        }
+                    }
+                }
+            },
+            include: {
+                products: {
+                    include: {
+                        product: true
+                    }
+                }
+            }
+        });
+    };
 }
 
 export default SaleRepository;
