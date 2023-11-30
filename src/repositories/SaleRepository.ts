@@ -8,30 +8,58 @@ class SaleRepository extends Repository {
         super();
         this.db = db;
     }
-    public getByChannel = (channel:ChannelType, page?:number, pageSize?:number) => {
+    public getByChannel = async (channel:ChannelType, page?:number, pageSize?:number) => {
         const limit = pageSize || 20;
         const offset = !!page && !!pageSize ? (page - 1) * pageSize : 0;
 
-        return this.db.sale.findMany({
-            where: {
-                products: {
-                    every: {
-                        product: {
-                            channel: channel
+        const [sales, totalCount] = await this.db.$transaction([
+            this.db.sale.findMany({
+                where: {
+                    products: {
+                        every: {
+                            product: {
+                                channel: channel
+                            }
                         }
-                    }   
+                    }
+                },
+                include: {
+                    products: {
+                        include: {
+                            product: true
+                        }
+                    }
+                },
+                take: limit,
+                skip: offset,
+                orderBy: {
+                    created_at: "desc"
                 }
-            },
-            include: {
-                products: {
-                    include: {
-                        product: true
+            }),
+            this.db.sale.count({
+                where: {
+                    products: {
+                        every: {
+                            product: {
+                                channel: channel
+                            }
+                        }
                     }
                 }
-            },
-            take: limit,
-            skip: offset
-        });
+            })
+        ]);
+
+        const totalPages = Math.ceil(totalCount / limit);
+
+        return {
+            data: sales,
+            pagination: {
+                totalCount,
+                totalPages,
+                currentPage: page || 1,
+                pageSize: limit
+            }
+        };
     };
     public getById = (id:string) => {
         return this.db.sale.findUnique({

@@ -41,12 +41,12 @@ class SaleController extends Controller{
         try{
             const {channel, page, pageSize} = req.query;
             const channelParam = ChannelSchema.parse(channel);
-            const sales = await this.repository.getByChannel(channelParam, Number(page), Number(pageSize));
-            if(sales.length === 0) {
+            const salesData = await this.repository.getByChannel(channelParam, Number(page), Number(pageSize));
+            if(salesData.data.length === 0) {
                 res.status(404).send("No sales found");
             }
             else {
-                res.json(sales);
+                res.json(salesData);
             }
         }catch(e){
             next(e);
