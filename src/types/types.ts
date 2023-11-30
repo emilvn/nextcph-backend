@@ -1,4 +1,4 @@
-import { ChannelType, Product } from "@prisma/client";
+import {ChannelType} from "@prisma/client";
 
 interface INewProduct {
 	id?: string;
@@ -35,4 +35,4 @@ interface INewSale {
 	products: ISaleProduct[];
 }
 
-export { INewProduct, IUpdateProduct, INewSale }
+export {INewProduct, IUpdateProduct, INewSale}
