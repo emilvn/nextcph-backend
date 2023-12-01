@@ -115,10 +115,9 @@ class SaleController extends Controller {
             const monthParam = DateSchema.parse(month);
             const rawSalesData = await this.repository.getByMonth(monthParam, channelParam);
 
-            let Categories: { name: string; total?: number }[] = [];
-            
-            Categories = await this.repository.getCategoryNames();
 
+            let Categories: { name: string; total?: number }[] = [];
+            Categories = await this.repository.getCategoryNames();
 
              for (const sale in rawSalesData) {
                 for (const category in Categories) {
@@ -133,23 +132,26 @@ class SaleController extends Controller {
 
                 }
              }
-            console.log(Categories);
-            
-            // const dashboardOverview = {
-            //     salesPercentage,
-            //     // salesPerCategory,
-            //     // percentagePerCategory,
-            //     averageProductsPerSale,
-            // };
+           
+            const totalRevenue = Categories.reduce((acc, category) => (acc + (category.total || 0)), 0);
 
-            // res.json(dashboardOverview);
+            const categoriesWithPercentage = Categories.map(category => ({
+                name: category.name,
+                total: category.total || 0,
+                percentage: (category.total || 0) / totalRevenue * 100
+                }));
+
+            const dashboardOverview = {
+                totalRevenue: totalRevenue,
+                categories: categoriesWithPercentage,
+                sales: rawSalesData
+            };
+
+            res.json(dashboardOverview);
         } catch (e) {
             next(e);
         }
     };
-
-
-
 
     routes = [
         {
