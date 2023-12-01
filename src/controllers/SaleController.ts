@@ -2,10 +2,9 @@ import Controller from "./Controller";
 import { Method } from "./Controller";
 import type { Request, Response, NextFunction } from "express";
 import type { PrismaClient } from "@prisma/client";
-import type { INewSale, IProduct } from "../types/types";
+import type { INewSale } from "../types/types";
 import SaleRepository from "../repositories/SaleRepository";
 import { ChannelSchema, UserIdSchema, NewSaleSchema, DateSchema } from "../validation/schemas";
-import { any } from "zod";
 
 class SaleController extends Controller {
     path: string = "/sales";
@@ -101,50 +100,63 @@ class SaleController extends Controller {
         }
     }
 
-    public getDashboardOverview = async (req: Request, res: Response, next: NextFunction ) => {
+    public getDashboardOverview = async (req: Request, res: Response, next: NextFunction) => {
         try {
             const { channel } = req.query;
             const channelParam = ChannelSchema.parse(channel);
-            
+
             let { month } = req.query;
             if (typeof month !== "string") {
                 const now = new Date();
                 month = new Date(now.getFullYear(), now.getMonth() - 1, 1).toISOString();
             }
-            
+
             const monthParam = DateSchema.parse(month);
             const rawSalesData = await this.repository.getByMonth(monthParam, channelParam);
-
 
             let Categories: { name: string; total?: number }[] = [];
             Categories = await this.repository.getCategoryNames();
 
-             for (const sale in rawSalesData) {
+            let totalSales = 0;
+            let totalRevenue = 0;
+
+            // iterer gennem rå salgsdata og opdater kategori totaler
+            for (const sale in rawSalesData) {
+                totalSales++;
                 for (const category in Categories) {
                     for (const product in rawSalesData[sale].products) {
                         if (Categories[category]?.name === rawSalesData[sale]?.products[product]?.product?.categories[0]?.category?.name) {
-
                             Categories[category].total = typeof Categories[category]?.total !== 'undefined'
                                 ? (Categories[category]?.total || 0) + (rawSalesData[sale]?.products[product]?.product?.price || 0) * (rawSalesData[sale]?.products[product]?.product_quantity || 0)
                                 : (rawSalesData[sale]?.products[product]?.product?.price || 0) * (rawSalesData[sale]?.products[product]?.product_quantity || 0);
                         }
                     }
-
                 }
-             }
-           
-            const totalRevenue = Categories.reduce((acc, category) => (acc + (category.total || 0)), 0);
+            }
 
+            // Beregner samlet omsætning baseret på kategori totaler
+            totalRevenue = Categories.reduce((acc, category) => (acc + (category.total || 0)), 0);
+
+            const daysInMonth = new Date(monthParam).getUTCDate();
+
+            // Beregner gennemsnitlig daglig salg og omsætning
+            const averageDailySales = totalSales / daysInMonth;
+            const averageDailyRevenue = totalRevenue / daysInMonth;
+
+            //oprettter array med kategorier inklusiv procentvis omsætningsandel de udgør
             const categoriesWithPercentage = Categories.map(category => ({
                 name: category.name,
                 total: category.total || 0,
                 percentage: (category.total || 0) / totalRevenue * 100
-                }));
+            }));
 
             const dashboardOverview = {
                 totalRevenue: totalRevenue,
+                totalSales: totalSales,
+                averageDailySales: averageDailySales,
+                averageDailyRevenue: averageDailyRevenue,
                 categories: categoriesWithPercentage,
-                sales: rawSalesData
+                // sales: rawSalesData // skal måske ikke sendes med?
             };
 
             res.json(dashboardOverview);

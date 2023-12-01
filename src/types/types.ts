@@ -35,17 +35,4 @@ interface INewSale {
 	products: ISaleProduct[];
 }
 
-//skal måske fjernes
-interface IProduct {
-    id: string;
-    name: string;
-    price: number;
-    stock: number;
-    channel: ChannelType;
-    created_at: Date;
-    updated_at: Date;
-    categories: string[];
-}
-
-
-export {INewProduct, IUpdateProduct, INewSale, IProduct}
+export {INewProduct, IUpdateProduct, INewSale}

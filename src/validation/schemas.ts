@@ -1,6 +1,5 @@
 import {z} from "zod";
 
-
 const NewProductSchema = z.object({
 	id: z.string().optional(),
 	name: z.string().min(1).max(191),
