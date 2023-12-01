@@ -134,12 +134,12 @@ class SaleController extends Controller {
                 }
             }
 
-            // Beregner samlet omsætning baseret på kategori totaler
+            // beregner samlet omsætning baseret på kategori totaler
             totalRevenue = Categories.reduce((acc, category) => (acc + (category.total || 0)), 0);
 
             const daysInMonth = new Date(monthParam).getUTCDate();
 
-            // Beregner gennemsnitlig daglig salg og omsætning
+            // beregner gennemsnitlig daglig salg og omsætning
             const averageDailySales = totalSales / daysInMonth;
             const averageDailyRevenue = totalRevenue / daysInMonth;
 
