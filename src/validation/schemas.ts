@@ -34,5 +34,6 @@ const NewSaleSchema = z.object({
 
 const ChannelSchema = z.enum(["HAIR_CARE", "COSMETIC"]);
 const UserIdSchema = z.string();
+const DateSchema = z.coerce.date();
 
-export {NewProductSchema, UpdateProductSchema, ChannelSchema, UserIdSchema, NewSaleSchema}
+export {NewProductSchema, UpdateProductSchema, ChannelSchema, UserIdSchema, NewSaleSchema, DateSchema}

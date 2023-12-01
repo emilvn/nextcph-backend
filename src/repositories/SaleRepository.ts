@@ -122,9 +122,13 @@ class SaleRepository extends Repository {
         });
     }
 
-    public getRawSalesData = async (channel: ChannelType) => {
+    public getByMonth = (month: Date, channel: ChannelType) => {
         return this.db.sale.findMany({
             where: {
+                created_at: {
+                    gte: month,
+                    lt: new Date(month.getFullYear(), month.getMonth() + 1, 1)
+                },
                 products: {
                     every: {
                         product: {
@@ -133,15 +137,34 @@ class SaleRepository extends Repository {
                     }
                 }
             },
+            orderBy: {
+                created_at: 'desc',
+            },
             include: {
                 products: {
-                    include: {
-                        product: true
+                    include: { 
+                        product: {
+                            include: {
+                                categories: {
+                                    include: {
+                                        category: true
+                                    }
+                                }
+                            }
+                        }
                     }
                 }
             }
         });
-    };
+    }
+
+    public getCategoryNames = () => {
+        return this.db.category.findMany({
+            select: {
+                name: true
+            }
+        });
+    }
 }
 
 export default SaleRepository;
