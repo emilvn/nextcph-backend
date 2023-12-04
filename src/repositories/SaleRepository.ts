@@ -126,15 +126,33 @@ class SaleRepository extends Repository {
                 }
             });
 
-            // create sale product relations
-            products.map(async (product) =>
-                await this.db.saleProduct.create({
+            for(const product of products) {
+                const productInStock = await prisma.product.findUnique({
+                    where: {
+                        id: product.id
+                    }
+                });
+                if(productInStock && productInStock.stock < product.quantity){
+                    throw new Error("Not enough stock for product with id: " + product.id);
+                }
+                await prisma.saleProduct.create({
                     data: {
                         sale_id: newSale.id,
                         product_id: product.id,
                         product_quantity: product.quantity
                     }
-                }));
+                });
+                await prisma.product.update({
+                    where: {
+                        id: product.id
+                    },
+                    data: {
+                        stock: {
+                            decrement: product.quantity
+                        }
+                    }
+                });
+            }
 
             return newSale;
         });
