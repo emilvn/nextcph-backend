@@ -29,8 +29,6 @@ class SaleRepository extends Repository {
         });
     };
 
-
-
     public getByMonth = (month: Date, channel: ChannelType) => {
         return this.db.sale.findMany({
             where: {
