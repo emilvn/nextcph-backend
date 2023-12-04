@@ -1,4 +1,4 @@
-import {z} from "zod";
+import { z } from "zod";
 
 
 const NewProductSchema = z.object({
@@ -9,7 +9,7 @@ const NewProductSchema = z.object({
 	channel: z.enum(["HAIR_CARE", "COSMETIC"]),
 	categories: z.array(z.string()
 		.min(1)
-		.max(191, {message: "Category name is too long"})),
+		.max(191, { message: "Category name is too long" })),
 });
 
 const UpdateProductSchema = z.object({
@@ -27,12 +27,13 @@ const SaleProductSchema = z.object({
 });
 
 const NewSaleSchema = z.object({
-    id: z.string().optional(),
-    user_id: z.string(),
-    products: z.array(SaleProductSchema),
+	id: z.string().optional(),
+	user_id: z.string(),
+	products: z.array(SaleProductSchema),
 })
 
 const ChannelSchema = z.enum(["HAIR_CARE", "COSMETIC"]);
 const UserIdSchema = z.string();
+const DateSchema = z.coerce.date();
 
-export {NewProductSchema, UpdateProductSchema, ChannelSchema, UserIdSchema, NewSaleSchema}
+export { NewProductSchema, UpdateProductSchema, ChannelSchema, UserIdSchema, NewSaleSchema, DateSchema }

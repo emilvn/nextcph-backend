@@ -30,6 +30,7 @@ interface ICategory {
 
 interface INewSale {
 	id?: string;
+	created_at?: string;
 	user_id: string;
 	products: ISaleProduct[];
 }
