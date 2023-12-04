@@ -28,6 +28,45 @@ class SaleRepository extends Repository {
             }
         });
     };
+
+
+
+    public getByMonth = (month: Date, channel: ChannelType) => {
+        return this.db.sale.findMany({
+            where: {
+                created_at: {
+                    gte: month,
+                    lt: new Date(month.getFullYear(), month.getMonth() + 1, 1)
+                },
+                products: {
+                    every: {
+                        product: {
+                            channel: channel
+                        }
+                    }
+                }
+            },
+            orderBy: {
+                created_at: 'desc',
+            },
+            include: {
+                products: {
+                    include: {
+                        product: {
+                            include: {
+                                categories: {
+                                    include: {
+                                        category: true
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        });
+    }
+
     public getById = (id: string) => {
         return this.db.sale.findUnique({
             where: {
