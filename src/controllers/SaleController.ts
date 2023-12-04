@@ -120,27 +120,31 @@ class SaleController extends Controller {
             let totalSales = 0;
             let totalRevenue = 0;
 
-            for (const sale in rawSalesData) {
-
+            rawSalesData.forEach((sale) => {
                 totalSales++;
 
-                for (const category in Categories) {
+                sale.products.forEach((saleProduct) => {
+                    const product = saleProduct.product;
+                    const matchingCategory = Categories.find((category) => {
+                        const currentCategoryName = category.name;
+                        const currentProductName = product?.categories[0]?.category?.name;
+                        return currentCategoryName === currentProductName;
+                    });
 
-                    for (const product in rawSalesData[sale].products) {
-                        const currentCategoryName = Categories[category]?.name;
-                        const currentProduct = rawSalesData[sale]?.products[product]?.product;
+                    if (matchingCategory) {
+                        const productPrice = product?.price || 0;
+                        const productQuantity = saleProduct.product_quantity || 0;
 
-                        if (currentCategoryName === currentProduct?.categories[0]?.category?.name) {
-                            const productPrice = currentProduct?.price || 0;
-                            const productQuantity = rawSalesData[sale]?.products[product]?.product_quantity || 0;
-
-                            Categories[category].total = typeof Categories[category]?.total !== 'undefined'
-                                ? (Categories[category]?.total || 0) + (productPrice * productQuantity)
-                                : (productPrice * productQuantity);
+                        if (typeof matchingCategory.total === 'undefined') {
+                            matchingCategory.total = 0;
                         }
+
+                        matchingCategory.total = (matchingCategory.total || 0) + (productPrice * productQuantity);
+                        totalRevenue += productPrice * productQuantity;
                     }
-                }
-            }
+                });
+            });
+
 
             totalRevenue = Categories.reduce((acc, category) => (acc + (category.total || 0)), 0);
 
