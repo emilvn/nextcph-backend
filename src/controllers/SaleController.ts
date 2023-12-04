@@ -5,6 +5,7 @@ import type { PrismaClient } from "@prisma/client";
 import type { INewSale } from "../types/types";
 import SaleRepository from "../repositories/SaleRepository";
 import { ChannelSchema, UserIdSchema, NewSaleSchema, DateSchema } from "../validation/schemas";
+import { string } from "zod";
 
 class SaleController extends Controller {
     path: string = "/sales";
@@ -116,7 +117,7 @@ class SaleController extends Controller {
         
             let Categories: { name: string; total?: number }[] = [];
             Categories = await this.repository.getCategoryNames();
-
+            
             let totalSales = 0;
             let totalRevenue = 0;
 
@@ -144,7 +145,6 @@ class SaleController extends Controller {
                     }
                 });
             });
-
 
             totalRevenue = Categories.reduce((acc, category) => (acc + (category.total || 0)), 0);
 
