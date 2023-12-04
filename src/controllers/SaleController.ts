@@ -113,7 +113,7 @@ class SaleController extends Controller {
 
             const monthParam = DateSchema.parse(month);
             const rawSalesData = await this.repository.getByMonth(monthParam, channelParam);
-
+        
             let Categories: { name: string; total?: number }[] = [];
             Categories = await this.repository.getCategoryNames();
 
