@@ -121,13 +121,22 @@ class SaleController extends Controller {
             let totalRevenue = 0;
 
             for (const sale in rawSalesData) {
+
                 totalSales++;
+
                 for (const category in Categories) {
+
                     for (const product in rawSalesData[sale].products) {
-                        if (Categories[category]?.name === rawSalesData[sale]?.products[product]?.product?.categories[0]?.category?.name) {
+                        const currentCategoryName = Categories[category]?.name;
+                        const currentProduct = rawSalesData[sale]?.products[product]?.product;
+
+                        if (currentCategoryName === currentProduct?.categories[0]?.category?.name) {
+                            const productPrice = currentProduct?.price || 0;
+                            const productQuantity = rawSalesData[sale]?.products[product]?.product_quantity || 0;
+
                             Categories[category].total = typeof Categories[category]?.total !== 'undefined'
-                                ? (Categories[category]?.total || 0) + (rawSalesData[sale]?.products[product]?.product?.price || 0) * (rawSalesData[sale]?.products[product]?.product_quantity || 0)
-                                : (rawSalesData[sale]?.products[product]?.product?.price || 0) * (rawSalesData[sale]?.products[product]?.product_quantity || 0);
+                                ? (Categories[category]?.total || 0) + (productPrice * productQuantity)
+                                : (productPrice * productQuantity);
                         }
                     }
                 }
