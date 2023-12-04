@@ -8,13 +8,14 @@ class SaleRepository extends Repository {
         super();
         this.db = db;
     }
-    public getByChannel = async (channel:ChannelType, page?:number, pageSize?:number) => {
+    public getByChannel = async (channel:ChannelType, page?:number, pageSize?:number, user_id?:string) => {
         const limit = pageSize || 20;
         const offset = !!page && !!pageSize ? (page - 1) * pageSize : 0;
 
         const [sales, totalCount] = await this.db.$transaction([
             this.db.sale.findMany({
                 where: {
+                    user_id: user_id,
                     products: {
                         every: {
                             product: {
@@ -75,27 +76,7 @@ class SaleRepository extends Repository {
             }
         });
     }
-    public getByUserId = (user_id: string, channel:ChannelType) => {
-        return this.db.sale.findMany({
-            where: {
-                user_id: user_id,
-                products: {
-                    every: {
-                        product: {
-                            channel: channel
-                        }
-                    }   
-                },
-            },
-            include: {
-                products: {
-                    include: {
-                        product: true
-                    }
-                }
-            }
-        });
-    }
+
     public create = async (data: INewSale) => {{
         const { user_id, products } = data;
 
