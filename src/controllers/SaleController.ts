@@ -120,7 +120,6 @@ class SaleController extends Controller {
             let totalSales = 0;
             let totalRevenue = 0;
 
-            // iterer gennem rå salgsdata og opdater kategori totaler
             for (const sale in rawSalesData) {
                 totalSales++;
                 for (const category in Categories) {
@@ -134,16 +133,13 @@ class SaleController extends Controller {
                 }
             }
 
-            // beregner samlet omsætning baseret på kategori totaler
             totalRevenue = Categories.reduce((acc, category) => (acc + (category.total || 0)), 0);
 
             const daysInMonth = new Date(monthParam).getUTCDate();
 
-            // beregner gennemsnitlig daglig salg og omsætning
             const averageDailySales = totalSales / daysInMonth;
             const averageDailyRevenue = totalRevenue / daysInMonth;
 
-            //oprettter array med kategorier inklusiv procentvis omsætningsandel de udgør
             const categoriesWithPercentage = Categories.map(category => ({
                 name: category.name,
                 total: category.total || 0,
@@ -156,7 +152,6 @@ class SaleController extends Controller {
                 averageDailySales: averageDailySales,
                 averageDailyRevenue: averageDailyRevenue,
                 categories: categoriesWithPercentage,
-                // sales: rawSalesData // skal måske ikke sendes med?
             };
 
             res.json(dashboardOverview);
