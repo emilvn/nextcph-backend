@@ -112,8 +112,6 @@ class SaleController extends Controller {
                 month = new Date(now.getFullYear(), now.getMonth()).toISOString();
             }
 
-            console.log(month)
-
             const monthParam = DateSchema.parse(month);
             const rawSalesData = await this.repository.getByMonth(monthParam, channelParam);
         
