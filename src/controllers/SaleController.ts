@@ -109,16 +109,18 @@ class SaleController extends Controller {
             let { month } = req.query;
             if (typeof month !== "string") {
                 const now = new Date();
-                month = new Date(now.getFullYear(), now.getMonth() - 1, 1).toISOString();
+                month = new Date(now.getFullYear(), now.getMonth()).toISOString();
             }
+
+            console.log(month)
 
             const monthParam = DateSchema.parse(month);
             const rawSalesData = await this.repository.getByMonth(monthParam, channelParam);
         
             let Categories: { name: string; total?: number }[] = [];
-            Categories = await this.repository.getCategoryNames();
+            Categories = await this.repository.getCategoryNames(channelParam);
             
-            let totalSales = 0;
+            let totalSales = 0 ;
             let totalRevenue = 0;
 
             rawSalesData.forEach((sale) => {
@@ -128,17 +130,11 @@ class SaleController extends Controller {
                     const product = saleProduct.product;
                     const matchingCategory = Categories.find((category) => {
                         const currentCategoryName = category.name;
-                        const currentProductName = product?.categories[0]?.category?.name;
-                        return currentCategoryName === currentProductName;
+                        return product?.categories.some((c) => c.category.name === currentCategoryName)
                     });
-
                     if (matchingCategory) {
                         const productPrice = product?.price || 0;
                         const productQuantity = saleProduct.product_quantity || 0;
-
-                        if (typeof matchingCategory.total === 'undefined') {
-                            matchingCategory.total = 0;
-                        }
 
                         matchingCategory.total = (matchingCategory.total || 0) + (productPrice * productQuantity);
                         totalRevenue += productPrice * productQuantity;

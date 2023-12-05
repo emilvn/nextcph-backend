@@ -1,6 +1,7 @@
 import { ChannelType, PrismaClient, Sale, SaleProduct } from "@prisma/client";
 import { INewSale } from "../types/types";
 import Repository from "./Repository";
+import { Channel, channel } from "diagnostics_channel";
 
 class SaleRepository extends Repository {
     db: PrismaClient;
@@ -158,10 +159,13 @@ class SaleRepository extends Repository {
         });
     }
 
-    public getCategoryNames = () => {
+    public getCategoryNames = (channel: ChannelType) => {
         return this.db.category.findMany({
+            where: {
+                channel: channel
+            },
             select: {
-                name: true
+                name: true, 
             }
         });
     }
