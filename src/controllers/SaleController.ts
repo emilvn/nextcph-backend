@@ -5,7 +5,6 @@ import type { PrismaClient } from "@prisma/client";
 import type { INewSale } from "../types/types";
 import SaleRepository from "../repositories/SaleRepository";
 import { ChannelSchema, UserIdSchema, NewSaleSchema, DateSchema } from "../validation/schemas";
-import { string } from "zod";
 
 class SaleController extends Controller {
     path: string = "/sales";
@@ -179,7 +178,7 @@ class SaleController extends Controller {
             handler: this.getByChannel
         },
         {
-            path: '/dashboard',
+            path: '/statistics',
             method: Method.GET,
             handler: this.getDashboardOverview,
         },

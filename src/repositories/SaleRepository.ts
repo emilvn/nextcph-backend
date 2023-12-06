@@ -1,7 +1,6 @@
-import { ChannelType, PrismaClient, Sale, SaleProduct } from "@prisma/client";
-import { INewSale } from "../types/types";
+import { ChannelType, type PrismaClient} from "@prisma/client";
+import type { INewSale } from "../types/types";
 import Repository from "./Repository";
-import { Channel, channel } from "diagnostics_channel";
 
 class SaleRepository extends Repository {
     db: PrismaClient;
