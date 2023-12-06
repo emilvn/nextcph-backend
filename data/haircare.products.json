@@ -31,7 +31,7 @@
   },
   {
     "id": "54",
-    "name": "Heal og Revive, Mask",
+    "name": "Heal og Revive Mask, 1stk",
     "price": 279,
     "stock": 100,
     "channel": "HAIR_CARE",
@@ -71,7 +71,7 @@
   },
   {
     "id": "58",
-    "name": "Shampoo & Conditioner, Mask",
+    "name": "Shampoo & Conditioner Mask, 1stk",
     "price": 239,
     "stock": 100,
     "channel": "HAIR_CARE",
@@ -81,7 +81,7 @@
   },
   {
     "id": "59",
-    "name": "Shampoo & Conditioner, Booster",
+    "name": "Shampoo & Conditioner Booster, 1stk",
     "price": 69,
     "stock": 100,
     "channel": "HAIR_CARE",
