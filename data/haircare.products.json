@@ -1,5 +1,6 @@
 [
   {
+    "id": "51",
     "name": "Heal og Revive Shampoo & Conditioner, 100ml",
     "price": 109,
     "stock": 10,
@@ -9,6 +10,7 @@
     ]
   },
   {
+    "id": "52",
     "name": "Heal og Revive Shampoo & Conditioner, 300-350ml",
     "price": 229,
     "stock": 10,
@@ -18,6 +20,7 @@
     ]
   },
   {
+    "id": "53",
     "name": "Heal og Revive Shampoo & Conditioner, 1000ml",
     "price": 589,
     "stock": 10,
@@ -27,6 +30,7 @@
     ]
   },
   {
+    "id": "54",
     "name": "Heal og Revive, Mask",
     "price": 279,
     "stock": 10,
@@ -36,6 +40,7 @@
     ]
   },
   {
+    "id": "55",
     "name": "Shampoo & Conditioner, 100ml",
     "price": 109,
     "stock": 10,
@@ -45,6 +50,7 @@
     ]
   },
   {
+    "id": "56",
     "name": "Shampoo & Conditioner, 300-350ml",
     "price": 229,
     "stock": 10,
@@ -54,6 +60,7 @@
     ]
   },
   {
+    "id": "57",
     "name": "Shampoo & Conditioner, 1000ml",
     "price": 519,
     "stock": 10,
@@ -63,6 +70,7 @@
     ]
   },
   {
+    "id": "58",
     "name": "Shampoo & Conditioner, Mask",
     "price": 239,
     "stock": 10,
@@ -72,6 +80,7 @@
     ]
   },
   {
+    "id": "59",
     "name": "Shampoo & Conditioner, Booster",
     "price": 69,
     "stock": 10,
@@ -81,6 +90,7 @@
     ]
   },
   {
+    "id": "60",
     "name": "Urban Alchemy Shampoo, 250ml",
     "price": 159,
     "stock": 10,
@@ -90,6 +100,7 @@
     ]
   },
   {
+    "id": "61",
     "name": "Urban Alchemy Conditioner, 200ml",
     "price": 159,
     "stock": 10,
@@ -99,6 +110,7 @@
     ]
   },
   {
+    "id": "62",
     "name": "Voks, 50ml",
     "price": 119,
     "stock": 10,
@@ -108,6 +120,7 @@
     ]
   },
   {
+    "id": "63",
     "name": "Voks, 100ml",
     "price": 189,
     "stock": 10,
@@ -117,6 +130,7 @@
     ]
   },
   {
+    "id": "64",
     "name": "Pure Volume mousse",
     "price": 105,
     "stock": 10,
@@ -126,6 +140,7 @@
     ]
   },
   {
+    "id": "65",
     "name": "Styling mouse, 100ml",
     "price": 45,
     "stock": 10,
@@ -135,6 +150,7 @@
     ]
   },
   {
+    "id": "66",
     "name": "Styling mouse, 300ml",
     "price": 60,
     "stock": 10,
@@ -144,6 +160,7 @@
     ]
   },
   {
+    "id": "67",
     "name": "Styling spray, 100ml",
     "price": 115,
     "stock": 10,
@@ -153,6 +170,7 @@
     ]
   },
   {
+    "id": "68",
     "name": "Styling spray, 400ml",
     "price": 199,
     "stock": 10,
@@ -162,6 +180,7 @@
     ]
   },
   {
+    "id": "69",
     "name": "Finishing spray, 100ml",
     "price": 115,
     "stock": 10,
@@ -171,6 +190,7 @@
     ]
   },
   {
+    "id": "70",
     "name": "Finishing spray, 400ml",
     "price": 199,
     "stock": 10,
@@ -180,6 +200,7 @@
     ]
   },
   {
+    "id": "71",
     "name": "Extreme spray, 100ml",
     "price": 115,
     "stock": 10,
@@ -189,6 +210,7 @@
     ]
   },
   {
+    "id": "72",
     "name": "Extreme spray, 400ml",
     "price": 199,
     "stock": 10,
@@ -198,6 +220,7 @@
     ]
   },
   {
+    "id": "73",
     "name": "Volume spray, 100ml",
     "price": 115,
     "stock": 10,
@@ -207,6 +230,7 @@
     ]
   },
   {
+    "id": "74",
     "name": "Volume spray, 400ml",
     "price": 199,
     "stock": 10,
@@ -216,6 +240,7 @@
     ]
   },
   {
+    "id": "75",
     "name": "Shimmerspray, 100ml",
     "price": 115,
     "stock": 10,
@@ -225,6 +250,7 @@
     ]
   },
   {
+    "id": "76",
     "name": "Shimmerspray, 300ml",
     "price": 199,
     "stock": 10,
@@ -234,6 +260,7 @@
     ]
   },
   {
+    "id": "77",
     "name": "Dry Shampoo, 100ml",
     "price": 115,
     "stock": 10,
@@ -243,6 +270,7 @@
     ]
   },
   {
+    "id": "78",
     "name": "Dry Shampoo, 250ml",
     "price": 199,
     "stock": 10,
@@ -252,6 +280,7 @@
     ]
   },
   {
+    "id": "79",
     "name": "Invisidry spray, 100ml",
     "price": 115,
     "stock": 10,
@@ -261,6 +290,7 @@
     ]
   },
   {
+    "id": "80",
     "name": "Invisidry spray, 250ml",
     "price": 199,
     "stock": 10,
@@ -270,6 +300,7 @@
     ]
   },
   {
+    "id": "81",
     "name": "Salty mist",
     "price": 199,
     "stock": 10,
@@ -279,6 +310,7 @@
     ]
   },
   {
+    "id": "82",
     "name": "Ocean spray",
     "price": 199,
     "stock": 10,
@@ -288,6 +320,7 @@
     ]
   },
   {
+    "id": "83",
     "name": "Cream heat spray",
     "price": 199,
     "stock": 10,
@@ -297,6 +330,7 @@
     ]
   },
   {
+    "id": "84",
     "name": "Quick dry heat spray",
     "price": 199,
     "stock": 10,
@@ -306,6 +340,7 @@
     ]
   },
   {
+    "id": "85",
     "name": "Power powder",
     "price": 139,
     "stock": 10,
@@ -315,6 +350,7 @@
     ]
   },
   {
+    "id": "86",
     "name": "Cleansing powder, 60g",
     "price": 109,
     "stock": 10,
@@ -324,6 +360,7 @@
     ]
   },
   {
+    "id": "87",
     "name": "Cleansing powder, 120g",
     "price": 179,
     "stock": 10,
@@ -333,6 +370,7 @@
     ]
   },
   {
+    "id": "88",
     "name": "Style Creme",
     "price": 219,
     "stock": 10,
@@ -342,6 +380,7 @@
     ]
   },
   {
+    "id": "89",
     "name": "True soft argan oil, 30ml",
     "price": 95,
     "stock": 10,
@@ -351,6 +390,7 @@
     ]
   },
   {
+    "id": "90",
     "name": "True soft argan oil, 100ml",
     "price": 239,
     "stock": 10,
@@ -360,6 +400,7 @@
     ]
   },
   {
+    "id": "91",
     "name": "Structure repair leave in",
     "price": 219,
     "stock": 10,
@@ -369,6 +410,7 @@
     ]
   },
   {
+    "id": "92",
     "name": "Styling cream",
     "price": 219,
     "stock": 10,
@@ -378,6 +420,7 @@
     ]
   },
   {
+    "id": "93",
     "name": "Curlicue cream",
     "price": 219,
     "stock": 10,
@@ -387,6 +430,7 @@
     ]
   },
   {
+    "id": "94",
     "name": "Salty cream",
     "price": 219,
     "stock": 10,
@@ -396,6 +440,7 @@
     ]
   },
   {
+    "id": "95",
     "name": "Stardust S",
     "price": 299,
     "stock": 10,
@@ -405,6 +450,7 @@
     ]
   },
   {
+    "id": "96",
     "name": "Sweet Pea S",
     "price": 299,
     "stock": 10,
@@ -414,6 +460,7 @@
     ]
   },
   {
+    "id": "97",
     "name": "Paradis S",
     "price": 299,
     "stock": 10,
@@ -423,6 +470,7 @@
     ]
   },
   {
+    "id": "98",
     "name": "Octopus M",
     "price": 299,
     "stock": 10,
@@ -432,6 +480,7 @@
     ]
   },
   {
+    "id": "99",
     "name": "Sunshine Yellow M",
     "price": 299,
     "stock": 10,
@@ -441,6 +490,7 @@
     ]
   },
   {
+    "id": "100",
     "name": "Butterfly M",
     "price": 399,
     "stock": 10,
@@ -450,6 +500,7 @@
     ]
   },
   {
+    "id": "101",
     "name": "Jungle M",
     "price": 399,
     "stock": 10,
@@ -459,6 +510,7 @@
     ]
   },
   {
+    "id": "102",
     "name": "Turtle M",
     "price": 399,
     "stock": 10,
@@ -468,6 +520,7 @@
     ]
   },
   {
+    "id": "103",
     "name": "Mink M",
     "price": 399,
     "stock": 10,
@@ -477,6 +530,7 @@
     ]
   },
   {
+    "id": "104",
     "name": "Maldives M",
     "price": 399,
     "stock": 10,
@@ -486,6 +540,7 @@
     ]
   },
   {
+    "id": "105",
     "name": "Blush M",
     "price": 399,
     "stock": 10,
@@ -495,6 +550,7 @@
     ]
   },
   {
+    "id": "106",
     "name": "Red Poppy M",
     "price": 399,
     "stock": 10,
@@ -504,6 +560,7 @@
     ]
   },
   {
+    "id": "107",
     "name": "Tortoise Shell M",
     "price": 449,
     "stock": 10,
@@ -513,6 +570,7 @@
     ]
   },
   {
+    "id": "108",
     "name": "Hollywood M",
     "price": 449,
     "stock": 10,
@@ -522,6 +580,7 @@
     ]
   },
   {
+    "id": "109",
     "name": "Nude M",
     "price": 449,
     "stock": 10,
@@ -531,6 +590,7 @@
     ]
   },
   {
+    "id": "110",
     "name": "Wet Bioom L Paddle",
     "price": 499,
     "stock": 10,
@@ -540,6 +600,7 @@
     ]
   },
   {
+    "id": "111",
     "name": "Stardust L",
     "price": 499,
     "stock": 10,
@@ -549,6 +610,7 @@
     ]
   },
   {
+    "id": "112",
     "name": "Hair elastikker, 1 stk",
     "price": 20,
     "stock": 10,
@@ -558,6 +620,7 @@
     ]
   },
   {
+    "id": "113",
     "name": "Hair clamp Emilie, Nude",
     "price": 124,
     "stock": 10,
@@ -567,6 +630,7 @@
     ]
   },
   {
+    "id": "114",
     "name": "Hair clamp Pernille, Purple",
     "price": 87,
     "stock": 10,
@@ -576,6 +640,7 @@
     ]
   },
   {
+    "id": "115",
     "name": "Hair clamp Clara, White",
     "price": 87,
     "stock": 10,
@@ -585,6 +650,7 @@
     ]
   },
   {
+    "id": "116",
     "name": "Hair clamp Mette, Orange",
     "price": 74,
     "stock": 10,

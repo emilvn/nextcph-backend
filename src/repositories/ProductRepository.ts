@@ -42,7 +42,7 @@ class ProductRepository extends Repository{
 						category: {
 							connectOrCreate: {
 								where: { name: categoryName },
-								create: { name: categoryName, channel: channel },
+								create: { name: categoryName , channel: channel},
 							},
 						},
 					})),

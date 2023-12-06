@@ -1,0 +1,47 @@
+[
+  {
+    "user_id": "user_2YS0Ujnbl7pL64RlGc0bxCpP16E",
+    "products": [
+      {
+        "id": "clozpzol700016izzbf3u22ke",
+        "quantity": 1,
+        "channel": "COSMETIC"
+      },
+      {
+          "id": "clozpzol700026izzx60nk42k",
+          "quantity": 4,
+          "channel": "COSMETIC"
+      }
+    ]
+  },
+  {
+    "user_id": "user_2YS0Ujnbl7pL64RlGc0bxCpP16E",
+    "products": [
+      {
+        "id": "clozpzom300106izzefd6z4jp",
+        "quantity": 6,
+        "channel": "COSMETIC"
+      },
+      {
+        "id": "clozpzoml001g6izzuwg26wle",
+        "quantity": 4,
+        "channel": "COSMETIC"
+      }
+    ]
+  },
+  {
+    "user_id": "user_2YS0Ujnbl7pL64RlGc0bxCpP16E",
+    "products": [
+      {
+        "id": "clozpzom300106izzefd6z4jp",
+        "quantity": 6,
+        "channel": "COSMETIC"
+      },
+      {
+        "id": "clozpzoml001g6izzuwg26wle",
+        "quantity": 4,
+        "channel": "COSMETIC"
+      }
+    ]
+  }
+]

@@ -39,6 +39,7 @@ model Category {
 	id         String            @id @default(cuid())
 	name       String            @unique
 	products   ProductCategory[]
+	channel    ChannelType
 	created_at DateTime          @default(now())
 	updated_at DateTime          @updatedAt
 	channel    ChannelType
