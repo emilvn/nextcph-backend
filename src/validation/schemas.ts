@@ -28,6 +28,7 @@ const SaleProductSchema = z.object({
 
 const NewSaleSchema = z.object({
 	id: z.string().optional(),
+	created_at: z.string().optional(),
 	user_id: z.string(),
 	products: z.array(SaleProductSchema),
 })
