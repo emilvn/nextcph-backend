@@ -1,593 +1,659 @@
 [
   {
+    "id": "51",
     "name": "Heal og Revive Shampoo & Conditioner, 100ml",
     "price": 109,
-    "stock": 10,
+    "stock": 100,
     "channel": "HAIR_CARE",
     "categories": [
       "SHAMPOO & CONDITIONER"
     ]
   },
   {
+    "id": "52",
     "name": "Heal og Revive Shampoo & Conditioner, 300-350ml",
     "price": 229,
-    "stock": 10,
+    "stock": 100,
     "channel": "HAIR_CARE",
     "categories": [
       "SHAMPOO & CONDITIONER"
     ]
   },
   {
+    "id": "53",
     "name": "Heal og Revive Shampoo & Conditioner, 1000ml",
     "price": 589,
-    "stock": 10,
+    "stock": 100,
     "channel": "HAIR_CARE",
     "categories": [
       "SHAMPOO & CONDITIONER"
     ]
   },
   {
-    "name": "Heal og Revive, Mask",
+    "id": "54",
+    "name": "Heal og Revive Mask, 1stk",
     "price": 279,
-    "stock": 10,
+    "stock": 100,
     "channel": "HAIR_CARE",
     "categories": [
       "SHAMPOO & CONDITIONER"
     ]
   },
   {
+    "id": "55",
     "name": "Shampoo & Conditioner, 100ml",
     "price": 109,
-    "stock": 10,
+    "stock": 100,
     "channel": "HAIR_CARE",
     "categories": [
       "SHAMPOO & CONDITIONER"
     ]
   },
   {
+    "id": "56",
     "name": "Shampoo & Conditioner, 300-350ml",
     "price": 229,
-    "stock": 10,
+    "stock": 100,
     "channel": "HAIR_CARE",
     "categories": [
       "SHAMPOO & CONDITIONER"
     ]
   },
   {
+    "id": "57",
     "name": "Shampoo & Conditioner, 1000ml",
     "price": 519,
-    "stock": 10,
+    "stock": 100,
     "channel": "HAIR_CARE",
     "categories": [
       "SHAMPOO & CONDITIONER"
     ]
   },
   {
-    "name": "Shampoo & Conditioner, Mask",
+    "id": "58",
+    "name": "Shampoo & Conditioner Mask, 1stk",
     "price": 239,
-    "stock": 10,
+    "stock": 100,
     "channel": "HAIR_CARE",
     "categories": [
       "SHAMPOO & CONDITIONER"
     ]
   },
   {
-    "name": "Shampoo & Conditioner, Booster",
+    "id": "59",
+    "name": "Shampoo & Conditioner Booster, 1stk",
     "price": 69,
-    "stock": 10,
+    "stock": 100,
     "channel": "HAIR_CARE",
     "categories": [
       "SHAMPOO & CONDITIONER"
     ]
   },
   {
+    "id": "60",
     "name": "Urban Alchemy Shampoo, 250ml",
     "price": 159,
-    "stock": 10,
+    "stock": 100,
     "channel": "HAIR_CARE",
     "categories": [
       "SHAMPOO & CONDITIONER"
     ]
   },
   {
+    "id": "61",
     "name": "Urban Alchemy Conditioner, 200ml",
     "price": 159,
-    "stock": 10,
+    "stock": 100,
     "channel": "HAIR_CARE",
     "categories": [
       "SHAMPOO & CONDITIONER"
     ]
   },
   {
+    "id": "62",
     "name": "Voks, 50ml",
     "price": 119,
-    "stock": 10,
+    "stock": 100,
     "channel": "HAIR_CARE",
     "categories": [
       "STYLE(VOKS)"
     ]
   },
   {
+    "id": "63",
     "name": "Voks, 100ml",
     "price": 189,
-    "stock": 10,
+    "stock": 100,
     "channel": "HAIR_CARE",
     "categories": [
       "STYLE(VOKS)"
     ]
   },
   {
-    "name": "Pure Volume mousse",
+    "id": "64",
+    "name": "Pure Volume mousse, 1stk",
     "price": 105,
-    "stock": 10,
+    "stock": 100,
     "channel": "HAIR_CARE",
     "categories": [
       "STYLE(MOUSSE)"
     ]
   },
   {
+    "id": "65",
     "name": "Styling mouse, 100ml",
     "price": 45,
-    "stock": 10,
+    "stock": 100,
     "channel": "HAIR_CARE",
     "categories": [
       "STYLE(MOUSSE)"
     ]
   },
   {
+    "id": "66",
     "name": "Styling mouse, 300ml",
     "price": 60,
-    "stock": 10,
+    "stock": 100,
     "channel": "HAIR_CARE",
     "categories": [
       "STYLE(MOUSSE)"
     ]
   },
   {
+    "id": "67",
     "name": "Styling spray, 100ml",
     "price": 115,
-    "stock": 10,
+    "stock": 100,
     "channel": "HAIR_CARE",
     "categories": [
       "STYLE(SPRAY & POWDER)"
     ]
   },
   {
+    "id": "68",
     "name": "Styling spray, 400ml",
     "price": 199,
-    "stock": 10,
+    "stock": 100,
     "channel": "HAIR_CARE",
     "categories": [
       "STYLE(SPRAY & POWDER)"
     ]
   },
   {
+    "id": "69",
     "name": "Finishing spray, 100ml",
     "price": 115,
-    "stock": 10,
+    "stock": 100,
     "channel": "HAIR_CARE",
     "categories": [
       "STYLE(SPRAY & POWDER)"
     ]
   },
   {
+    "id": "70",
     "name": "Finishing spray, 400ml",
     "price": 199,
-    "stock": 10,
+    "stock": 100,
     "channel": "HAIR_CARE",
     "categories": [
       "STYLE(SPRAY & POWDER)"
     ]
   },
   {
+    "id": "71",
     "name": "Extreme spray, 100ml",
     "price": 115,
-    "stock": 10,
+    "stock": 100,
     "channel": "HAIR_CARE",
     "categories": [
       "STYLE(SPRAY & POWDER)"
     ]
   },
   {
+    "id": "72",
     "name": "Extreme spray, 400ml",
     "price": 199,
-    "stock": 10,
+    "stock": 100,
     "channel": "HAIR_CARE",
     "categories": [
       "STYLE(SPRAY & POWDER)"
     ]
   },
   {
+    "id": "73",
     "name": "Volume spray, 100ml",
     "price": 115,
-    "stock": 10,
+    "stock": 100,
     "channel": "HAIR_CARE",
     "categories": [
       "STYLE(SPRAY & POWDER)"
     ]
   },
   {
+    "id": "74",
     "name": "Volume spray, 400ml",
     "price": 199,
-    "stock": 10,
+    "stock": 100,
     "channel": "HAIR_CARE",
     "categories": [
       "STYLE(SPRAY & POWDER)"
     ]
   },
   {
+    "id": "75",
     "name": "Shimmerspray, 100ml",
     "price": 115,
-    "stock": 10,
+    "stock": 100,
     "channel": "HAIR_CARE",
     "categories": [
       "STYLE(SPRAY & POWDER)"
     ]
   },
   {
+    "id": "76",
     "name": "Shimmerspray, 300ml",
     "price": 199,
-    "stock": 10,
+    "stock": 100,
     "channel": "HAIR_CARE",
     "categories": [
       "STYLE(SPRAY & POWDER)"
     ]
   },
   {
+    "id": "77",
     "name": "Dry Shampoo, 100ml",
     "price": 115,
-    "stock": 10,
+    "stock": 100,
     "channel": "HAIR_CARE",
     "categories": [
       "STYLE(SPRAY & POWDER)"
     ]
   },
   {
+    "id": "78",
     "name": "Dry Shampoo, 250ml",
     "price": 199,
-    "stock": 10,
+    "stock": 100,
     "channel": "HAIR_CARE",
     "categories": [
       "STYLE(SPRAY & POWDER)"
     ]
   },
   {
+    "id": "79",
     "name": "Invisidry spray, 100ml",
     "price": 115,
-    "stock": 10,
+    "stock": 100,
     "channel": "HAIR_CARE",
     "categories": [
       "STYLE(SPRAY & POWDER)"
     ]
   },
   {
+    "id": "80",
     "name": "Invisidry spray, 250ml",
     "price": 199,
-    "stock": 10,
+    "stock": 100,
     "channel": "HAIR_CARE",
     "categories": [
       "STYLE(SPRAY & POWDER)"
     ]
   },
   {
-    "name": "Salty mist",
+    "id": "81",
+    "name": "Salty mist, 1stk",
     "price": 199,
-    "stock": 10,
+    "stock": 100,
     "channel": "HAIR_CARE",
     "categories": [
       "STYLE(SPRAY & POWDER)"
     ]
   },
   {
-    "name": "Ocean spray",
+    "id": "82",
+    "name": "Ocean spray, 1stk",
     "price": 199,
-    "stock": 10,
+    "stock": 100,
     "channel": "HAIR_CARE",
     "categories": [
       "STYLE(SPRAY & POWDER)"
     ]
   },
   {
-    "name": "Cream heat spray",
+    "id": "83",
+    "name": "Cream heat spray, 1stk",
     "price": 199,
-    "stock": 10,
+    "stock": 100,
     "channel": "HAIR_CARE",
     "categories": [
       "STYLE(SPRAY & POWDER)"
     ]
   },
   {
-    "name": "Quick dry heat spray",
+    "id": "84",
+    "name": "Quick dry heat spray, 1stk",
     "price": 199,
-    "stock": 10,
+    "stock": 100,
     "channel": "HAIR_CARE",
     "categories": [
       "STYLE(SPRAY & POWDER)"
     ]
   },
   {
-    "name": "Power powder",
+    "id": "85",
+    "name": "Power powder, 1stk",
     "price": 139,
-    "stock": 10,
+    "stock": 100,
     "channel": "HAIR_CARE",
     "categories": [
       "STYLE(SPRAY & POWDER)"
     ]
   },
   {
+    "id": "86",
     "name": "Cleansing powder, 60g",
     "price": 109,
-    "stock": 10,
+    "stock": 100,
     "channel": "HAIR_CARE",
     "categories": [
       "STYLE(SPRAY & POWDER)"
     ]
   },
   {
+    "id": "87",
     "name": "Cleansing powder, 120g",
     "price": 179,
-    "stock": 10,
+    "stock": 100,
     "channel": "HAIR_CARE",
     "categories": [
       "STYLE(SPRAY & POWDER)"
     ]
   },
   {
-    "name": "Style Creme",
+    "id": "88",
+    "name": "Style Creme, 1stk",
     "price": 219,
-    "stock": 10,
+    "stock": 100,
     "channel": "HAIR_CARE",
     "categories": [
       "STYLE(SPRAY & POWDER)"
     ]
   },
   {
+    "id": "89",
     "name": "True soft argan oil, 30ml",
     "price": 95,
-    "stock": 10,
+    "stock": 100,
     "channel": "HAIR_CARE",
     "categories": [
       "STYLE(SPRAY & POWDER)"
     ]
   },
   {
+    "id": "90",
     "name": "True soft argan oil, 100ml",
     "price": 239,
-    "stock": 10,
+    "stock": 100,
     "channel": "HAIR_CARE",
     "categories": [
       "STYLE(SPRAY & POWDER)"
     ]
   },
   {
-    "name": "Structure repair leave in",
+    "id": "91",
+    "name": "Structure repair leave in, 1stk",
     "price": 219,
-    "stock": 10,
+    "stock": 100,
     "channel": "HAIR_CARE",
     "categories": [
       "STYLE(SPRAY & POWDER)"
     ]
   },
   {
-    "name": "Styling cream",
+    "id": "92",
+    "name": "Styling cream, 1stk",
     "price": 219,
-    "stock": 10,
+    "stock": 100,
     "channel": "HAIR_CARE",
     "categories": [
       "STYLE(SPRAY & POWDER)"
     ]
   },
   {
-    "name": "Curlicue cream",
+    "id": "93",
+    "name": "Curlicue cream, 1stk",
     "price": 219,
-    "stock": 10,
+    "stock": 100,
     "channel": "HAIR_CARE",
     "categories": [
       "STYLE(SPRAY & POWDER)"
     ]
   },
   {
-    "name": "Salty cream",
+    "id": "94",
+    "name": "Salty cream, 1stk",
     "price": 219,
-    "stock": 10,
+    "stock": 100,
     "channel": "HAIR_CARE",
     "categories": [
       "STYLE(SPRAY & POWDER)"
     ]
   },
   {
-    "name": "Stardust S",
+    "id": "95",
+    "name": "Stardust S, 1stk",
     "price": 299,
-    "stock": 10,
+    "stock": 100,
     "channel": "HAIR_CARE",
     "categories": [
       "FAN PALM BØRSTER"
     ]
   },
   {
-    "name": "Sweet Pea S",
+    "id": "96",
+    "name": "Sweet Pea S, 1stk",
     "price": 299,
-    "stock": 10,
+    "stock": 100,
     "channel": "HAIR_CARE",
     "categories": [
       "FAN PALM BØRSTER"
     ]
   },
   {
-    "name": "Paradis S",
+    "id": "97",
+    "name": "Paradis S, 1stk",
     "price": 299,
-    "stock": 10,
+    "stock": 100,
     "channel": "HAIR_CARE",
     "categories": [
       "FAN PALM BØRSTER"
     ]
   },
   {
-    "name": "Octopus M",
+    "id": "98",
+    "name": "Octopus M, 1stk",
     "price": 299,
-    "stock": 10,
+    "stock": 100,
     "channel": "HAIR_CARE",
     "categories": [
       "FAN PALM BØRSTER"
     ]
   },
   {
-    "name": "Sunshine Yellow M",
+    "id": "99",
+    "name": "Sunshine Yellow M, 1stk",
     "price": 299,
-    "stock": 10,
+    "stock": 100,
     "channel": "HAIR_CARE",
     "categories": [
       "FAN PALM BØRSTER"
     ]
   },
   {
-    "name": "Butterfly M",
+    "id": "100",
+    "name": "Butterfly M, 1stk",
     "price": 399,
-    "stock": 10,
+    "stock": 100,
     "channel": "HAIR_CARE",
     "categories": [
       "FAN PALM BØRSTER"
     ]
   },
   {
-    "name": "Jungle M",
+    "id": "101",
+    "name": "Jungle M, 1stk",
     "price": 399,
-    "stock": 10,
+    "stock": 100,
     "channel": "HAIR_CARE",
     "categories": [
       "FAN PALM BØRSTER"
     ]
   },
   {
-    "name": "Turtle M",
+    "id": "102",
+    "name": "Turtle M, 1stk",
     "price": 399,
-    "stock": 10,
+    "stock": 100,
     "channel": "HAIR_CARE",
     "categories": [
       "FAN PALM BØRSTER"
     ]
   },
   {
-    "name": "Mink M",
+    "id": "103",
+    "name": "Mink M, 1stk",
     "price": 399,
-    "stock": 10,
+    "stock": 100,
     "channel": "HAIR_CARE",
     "categories": [
       "FAN PALM BØRSTER"
     ]
   },
   {
-    "name": "Maldives M",
+    "id": "104",
+    "name": "Maldives M, 1stk",
     "price": 399,
-    "stock": 10,
+    "stock": 100,
     "channel": "HAIR_CARE",
     "categories": [
       "FAN PALM BØRSTER"
     ]
   },
   {
-    "name": "Blush M",
+    "id": "105",
+    "name": "Blush M, 1stk",
     "price": 399,
-    "stock": 10,
+    "stock": 100,
     "channel": "HAIR_CARE",
     "categories": [
       "FAN PALM BØRSTER"
     ]
   },
   {
-    "name": "Red Poppy M",
+    "id": "106",
+    "name": "Red Poppy M, 1stk",
     "price": 399,
-    "stock": 10,
+    "stock": 100,
     "channel": "HAIR_CARE",
     "categories": [
       "FAN PALM BØRSTER"
     ]
   },
   {
-    "name": "Tortoise Shell M",
+    "id": "107",
+    "name": "Tortoise Shell M, 1stk",
     "price": 449,
-    "stock": 10,
+    "stock": 100,
     "channel": "HAIR_CARE",
     "categories": [
       "FAN PALM BØRSTER"
     ]
   },
   {
-    "name": "Hollywood M",
+    "id": "108",
+    "name": "Hollywood M, 1stk",
     "price": 449,
-    "stock": 10,
+    "stock": 100,
     "channel": "HAIR_CARE",
     "categories": [
       "FAN PALM BØRSTER"
     ]
   },
   {
-    "name": "Nude M",
+    "id": "109",
+    "name": "Nude M, 1stk",
     "price": 449,
-    "stock": 10,
+    "stock": 100,
     "channel": "HAIR_CARE",
     "categories": [
       "FAN PALM BØRSTER"
     ]
   },
   {
-    "name": "Wet Bioom L Paddle",
+    "id": "110",
+    "name": "Wet Bioom L Paddle, 1stk",
     "price": 499,
-    "stock": 10,
+    "stock": 100,
     "channel": "HAIR_CARE",
     "categories": [
       "FAN PALM BØRSTER"
     ]
   },
   {
-    "name": "Stardust L",
+    "id": "111",
+    "name": "Stardust L, 1stk",
     "price": 499,
-    "stock": 10,
+    "stock": 100,
     "channel": "HAIR_CARE",
     "categories": [
       "FAN PALM BØRSTER"
     ]
   },
   {
+    "id": "112",
     "name": "Hair elastikker, 1 stk",
     "price": 20,
-    "stock": 10,
+    "stock": 100,
     "channel": "HAIR_CARE",
     "categories": [
       "HÅR ACCESSORIES ELASTIKKER"
     ]
   },
   {
-    "name": "Hair clamp Emilie, Nude",
+    "id": "113",
+    "name": "Hair clamp Emilie Nude, 1stk",
     "price": 124,
-    "stock": 10,
+    "stock": 100,
     "channel": "HAIR_CARE",
     "categories": [
       "HÅR ACCESSORIES KLEMMER"
     ]
   },
   {
-    "name": "Hair clamp Pernille, Purple",
+    "id": "114",
+    "name": "Hair clamp Pernille Purple, 1stk",
     "price": 87,
-    "stock": 10,
+    "stock": 100,
     "channel": "HAIR_CARE",
     "categories": [
       "HÅR ACCESSORIES KLEMMER"
     ]
   },
   {
-    "name": "Hair clamp Clara, White",
+    "id": "115",
+    "name": "Hair clamp Clara White, 1stk",
     "price": 87,
-    "stock": 10,
+    "stock": 100,
     "channel": "HAIR_CARE",
     "categories": [
       "HÅR ACCESSORIES KLEMMER"
     ]
   },
   {
-    "name": "Hair clamp Mette, Orange",
+    "id": "116",
+    "name": "Hair clamp Mette Orange, 1stk",
     "price": 74,
-    "stock": 10,
+    "stock": 100,
     "channel": "HAIR_CARE",
     "categories": [
       "HÅR ACCESSORIES KLEMMER"

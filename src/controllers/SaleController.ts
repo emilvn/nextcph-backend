@@ -44,18 +44,18 @@ class SaleController extends Controller {
                 month = new Date(now.getFullYear(), now.getMonth() - 1, 1).toISOString();
             }
 
-            const monthParam = DateSchema.parse(month);
-            const sales = await this.repository.getByMonth(monthParam, channelParam);
-            if (sales.length === 0) {
-                res.status(404).send("No sales found");
-            }
-            else {
-                res.json(sales);
-            }
-        } catch (e) {
-            next(e);
-        }
-    }
+			const monthParam = DateSchema.parse(month);
+			const sales = await this.repository.getByMonth(monthParam, channelParam);
+			if (sales.length === 0) {
+				res.status(404).send("No sales found");
+			}
+			else {
+				res.json(sales);
+			}
+		} catch (e) {
+			next(e);
+		}
+	}
 
     public getById = async (req: Request, res: Response, next: NextFunction) => {
         try {
@@ -104,6 +104,71 @@ class SaleController extends Controller {
         }
     }
 
+    public getDashboardOverview = async (req: Request, res: Response, next: NextFunction) => {
+        try {
+            const { channel } = req.query;
+            const channelParam = RequiredChannelSchema.parse(channel);
+
+            let { month } = req.query;
+            if (typeof month !== "string") {
+                const now = new Date();
+                month = new Date(now.getFullYear(), now.getMonth()).toISOString();
+            }
+
+            const monthParam = DateSchema.parse(month);
+            const rawSalesData = await this.repository.getByMonth(monthParam, channelParam);
+
+            let Categories: { name: string; total?: number }[] = [];
+            Categories = await this.repository.getCategoryNames(channelParam);
+
+            let totalSales = 0 ;
+            let totalRevenue = 0;
+
+            rawSalesData.forEach((sale) => {
+                totalSales++;
+
+                sale.products.forEach((saleProduct) => {
+                    const product = saleProduct.product;
+                    const matchingCategory = Categories.find((category) => {
+                        const currentCategoryName = category.name;
+                        return product?.categories.some((c) => c.category.name === currentCategoryName)
+                    });
+                    if (matchingCategory) {
+                        const productPrice = product?.price || 0;
+                        const productQuantity = saleProduct.product_quantity || 0;
+
+                        matchingCategory.total = (matchingCategory.total || 0) + (productPrice * productQuantity);
+                        totalRevenue += productPrice * productQuantity;
+                    }
+                });
+            });
+
+            totalRevenue = Categories.reduce((acc, category) => (acc + (category.total || 0)), 0);
+
+            const daysInMonth = new Date(monthParam).getUTCDate();
+
+            const averageDailySales = totalSales / daysInMonth;
+            const averageDailyRevenue = totalRevenue / daysInMonth;
+
+            const categoriesWithPercentage = Categories.map(category => ({
+                name: category.name,
+                total: category.total || 0,
+                percentage: (category.total || 0) / totalRevenue * 100
+            }));
+
+            const dashboardOverview = {
+                totalRevenue: totalRevenue,
+                totalSales: totalSales,
+                averageDailySales: averageDailySales,
+                averageDailyRevenue: averageDailyRevenue,
+                categories: categoriesWithPercentage,
+            };
+
+            res.json(dashboardOverview);
+        } catch (e) {
+            next(e);
+        }
+    };
 
     routes = [
         {
@@ -115,6 +180,11 @@ class SaleController extends Controller {
             path: '/month',
             method: Method.GET,
             handler: this.getByMonth
+        },
+        {
+            path: '/statistics',
+            method: Method.GET,
+            handler: this.getDashboardOverview,
         },
         {
             path: '/:id',

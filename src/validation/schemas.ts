@@ -34,7 +34,7 @@ const NewSaleSchema = z.object({
 
 const RequiredChannelSchema = z.enum(["HAIR_CARE", "COSMETIC"], { required_error: "Missing required channel query parameter",invalid_type_error: "Invalid channel query parameter, must be either HAIR_CARE or COSMETIC"  });
 const OptionalChannelSchema = z.enum(["HAIR_CARE", "COSMETIC"], { invalid_type_error: "Invalid channel query parameter, must be either HAIR_CARE or COSMETIC"  }).optional();
-const UserIdSchema = z.string();
+
 const DateSchema = z.coerce.date();
 
-export { NewProductSchema, UpdateProductSchema, RequiredChannelSchema, UserIdSchema, NewSaleSchema, DateSchema, OptionalChannelSchema }
+export { NewProductSchema, UpdateProductSchema, RequiredChannelSchema, NewSaleSchema, DateSchema, OptionalChannelSchema }
