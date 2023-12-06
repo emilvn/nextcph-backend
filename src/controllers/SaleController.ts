@@ -15,15 +15,15 @@ class SaleController extends Controller {
     }
 
 
-    public getByChannel = async (req:Request, res:Response, next:NextFunction) => {
-        try{
-            const {channel, page, pageSize, user_id} = req.query;
-			const userIdParam = user_id as string | undefined;
+    public getByChannel = async (req: Request, res: Response, next: NextFunction) => {
+        try {
+            const { channel, page, pageSize, user_id } = req.query;
+            const userIdParam = user_id as string | undefined;
             const channelParam = ChannelSchema.parse(channel);
             const salesData = await this.repository
-				.getByChannel(channelParam, Number(page), Number(pageSize), userIdParam);
+                .getByChannel(channelParam, Number(page), Number(pageSize), userIdParam);
 
-			if(salesData.data.length === 0) {
+            if (salesData.data.length === 0) {
                 res.status(404).send("No sales found");
             }
             else {
@@ -34,28 +34,28 @@ class SaleController extends Controller {
         }
     }
 
-	public getByMonth = async (req: Request, res: Response, next: NextFunction) => {
-		try {
-			const { channel } = req.query;
-			const channelParam = ChannelSchema.parse(channel);
-			let { month } = req.query;
-			if (typeof month !== "string") {
-				const now = new Date();
-				month = new Date(now.getFullYear(), now.getMonth() - 1, 1).toISOString();
-			}
+    public getByMonth = async (req: Request, res: Response, next: NextFunction) => {
+        try {
+            const { channel } = req.query;
+            const channelParam = ChannelSchema.parse(channel);
+            let { month } = req.query;
+            if (typeof month !== "string") {
+                const now = new Date();
+                month = new Date(now.getFullYear(), now.getMonth() - 1, 1).toISOString();
+            }
 
-			const monthParam = DateSchema.parse(month);
-			const sales = await this.repository.getByMonth(monthParam, channelParam);
-			if (sales.length === 0) {
-				res.status(404).send("No sales found");
-			}
-			else {
-				res.json(sales);
-			}
-		} catch (e) {
-			next(e);
-		}
-	}
+            const monthParam = DateSchema.parse(month);
+            const sales = await this.repository.getByMonth(monthParam, channelParam);
+            if (sales.length === 0) {
+                res.status(404).send("No sales found");
+            }
+            else {
+                res.json(sales);
+            }
+        } catch (e) {
+            next(e);
+        }
+    }
 
     public getById = async (req: Request, res: Response, next: NextFunction) => {
         try {
@@ -104,6 +104,17 @@ class SaleController extends Controller {
         }
     }
 
+    public getCategoryNames = async (req: Request, res: Response, next: NextFunction) => {
+        try {
+            const { channel } = req.query;
+            const channelParam = ChannelSchema.parse(channel);
+            const categories = await this.repository.getCategoryNames(channelParam);
+            res.json(categories);
+        } catch (e) {
+            next(e);
+        }
+    }
+
     public getDashboardOverview = async (req: Request, res: Response, next: NextFunction) => {
         try {
             const { channel } = req.query;
@@ -121,7 +132,7 @@ class SaleController extends Controller {
             let Categories: { name: string; total?: number }[] = [];
             Categories = await this.repository.getCategoryNames(channelParam);
 
-            let totalSales = 0 ;
+            let totalSales = 0;
             let totalRevenue = 0;
 
             rawSalesData.forEach((sale) => {
@@ -145,7 +156,7 @@ class SaleController extends Controller {
 
             totalRevenue = Categories.reduce((acc, category) => (acc + (category.total || 0)), 0);
 
-            const daysInMonth = new Date(monthParam).getUTCDate();
+            const daysInMonth = new Date(monthParam.getFullYear(), monthParam.getMonth() + 1, 0).getDate();
 
             const averageDailySales = totalSales / daysInMonth;
             const averageDailyRevenue = totalRevenue / daysInMonth;
@@ -185,6 +196,11 @@ class SaleController extends Controller {
             path: '/statistics',
             method: Method.GET,
             handler: this.getDashboardOverview,
+        },
+        {
+            path: '/categories',
+            method: Method.GET,
+            handler: this.getCategoryNames,
         },
         {
             path: '/:id',
