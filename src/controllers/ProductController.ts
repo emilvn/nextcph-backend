@@ -4,7 +4,11 @@ import type {Request, Response, NextFunction} from "express";
 import type {PrismaClient} from "@prisma/client";
 import type {INewProduct, IUpdateProduct} from "../types/types";
 import ProductRepository from "../repositories/ProductRepository";
-import { NewProductSchema, UpdateProductSchema, ChannelSchema } from "../validation/schemas";
+import {
+	NewProductSchema,
+	UpdateProductSchema,
+	OptionalChannelSchema
+} from "../validation/schemas";
 
 class ProductController extends Controller{
 	path: string = '/products';
@@ -14,11 +18,11 @@ class ProductController extends Controller{
 		this.repository = new ProductRepository(db);
 	}
 
-	public getByChannel = async (req:Request, res:Response, next:NextFunction) => {
+	public getAll = async (req:Request, res:Response, next:NextFunction) => {
 		try{
 			const {channel} = req.query;
-			const channelParam = ChannelSchema.parse(channel);
-			const productsWithCategories = await this.repository.getByChannel(channelParam);
+			const channelParam = OptionalChannelSchema.parse(channel);
+			const productsWithCategories = await this.repository.getAll(channelParam);
 			if(productsWithCategories.length === 0) {
 				res.status(404).send("No products found");
 			}
@@ -88,7 +92,7 @@ class ProductController extends Controller{
 		{
 			path: '/',
 			method: Method.GET,
-			handler: this.getByChannel
+			handler: this.getAll
 		},
 		{
 			path: '/:id',

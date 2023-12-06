@@ -8,7 +8,7 @@ class ProductRepository extends Repository{
 		this.db = db;
 	}
 
-	public getByChannel = (channel: ChannelType) => {
+	public getAll = (channel?: ChannelType) => {
 		return this.db.product.findMany({
 			where: {
 				channel: channel

@@ -8,7 +8,7 @@ class SaleRepository extends Repository {
         super();
         this.db = db;
     }
-    public getByChannel = async (channel:ChannelType, page?:number, pageSize?:number, user_id?:string) => {
+    public getAll = async (channel?:ChannelType, page?:number, pageSize?:number, user_id?:string) => {
         const limit = pageSize || 20;
         const offset = !!page && !!pageSize ? (page - 1) * pageSize : 0;
 

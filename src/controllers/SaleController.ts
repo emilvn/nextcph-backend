@@ -4,7 +4,7 @@ import type { Request, Response, NextFunction } from "express";
 import type { PrismaClient } from "@prisma/client";
 import type { INewSale } from "../types/types";
 import SaleRepository from "../repositories/SaleRepository";
-import { ChannelSchema, NewSaleSchema, DateSchema } from "../validation/schemas";
+import {RequiredChannelSchema, NewSaleSchema, DateSchema, OptionalChannelSchema} from "../validation/schemas";
 
 class SaleController extends Controller {
     path: string = "/sales";
@@ -14,14 +14,14 @@ class SaleController extends Controller {
         this.repository = new SaleRepository(db);
     }
 
-    public getByChannel = async (req:Request, res:Response, next:NextFunction) => {
+    public getAll = async (req:Request, res:Response, next:NextFunction) => {
         try{
             const {channel, page, pageSize, user_id} = req.query;
 			const userIdParam = user_id as string | undefined;
-            const channelParam = ChannelSchema.parse(channel);
+            const channelParam = OptionalChannelSchema.parse(channel);
 
             const salesData = await this.repository
-				.getByChannel(channelParam, Number(page), Number(pageSize), userIdParam);
+				.getAll(channelParam, Number(page), Number(pageSize), userIdParam);
 
 			if(salesData.data.length === 0) {
                 res.status(404).send("No sales found");
@@ -37,7 +37,7 @@ class SaleController extends Controller {
     public getByMonth = async (req: Request, res: Response, next: NextFunction) => {
         try {
             const { channel } = req.query;
-            const channelParam = ChannelSchema.parse(channel);
+            const channelParam = RequiredChannelSchema.parse(channel);
             let { month } = req.query;
             if (typeof month !== "string") {
                 const now = new Date();
@@ -109,7 +109,7 @@ class SaleController extends Controller {
         {
             path: '/',
             method: Method.GET,
-            handler: this.getByChannel
+            handler: this.getAll
         },
         {
             path: '/month',
