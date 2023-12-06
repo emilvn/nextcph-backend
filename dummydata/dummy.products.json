@@ -1,0 +1,1162 @@
+[
+  {
+	"id": "1",
+	"name":"Purifying Cleansing Gel, 212ml",
+	"price": 299,
+	"stock": 15,
+	"channel": "COSMETIC",
+	"categories":[
+	  "NORMAL - KOMBINERET HUD"
+	]
+  },
+  {
+	"id": "2",
+	"name": "Moisture Balance Toner, 200ml",
+	"price": 299,
+	"stock": 100,
+	"channel": "COSMETIC",
+	"categories": [
+	  "NORMAL - KOMBINERET HUD"
+	]
+  },
+  {
+	"id": "3",
+	"name": "Sheer Refining Fluid SPF 40, 50ml",
+	"price": 399,
+	"stock": 13,
+	"channel": "COSMETIC",
+	"categories": [
+	  "NORMAL - KOMBINERET HUD", "ALLE HUDTYPER, OGSÅ FØLSOM HUD"
+	]
+  },
+  {
+	"id": "4",
+	"name": "Essential Daily Defense Creme SPF 20, 50gr",
+	"price": 399,
+	"stock": 100,
+	"channel": "COSMETIC",
+	"categories": [
+	  "NORMAL - KOMBINERET HUD"
+	]
+  },
+  {
+	"id": "5",
+	"name": "Gentle Cleansing Creme, 212ml",
+	"price": 299,
+	"stock": 100,
+	"channel": "COSMETIC",
+	"categories": [
+	  "ALLE HUDTYPER, OGSÅ FØLSOM HUD"
+	]
+  },
+  {
+	"id": "6",
+	"name": "Soothing Toning Lotion, 200ml",
+	"price": 299,
+	"stock": 100,
+	"channel": "COSMETIC",
+	"categories": [
+	  "ALLE HUDTYPER, OGSÅ FØLSOM HUD"
+	]
+  },
+  {
+	"id": "7",
+	"name": "Multi-Protective Day Creme SPF 20, 50gr",
+	"price": 399,
+	"stock": 100,
+	"channel": "COSMETIC",
+	"categories": [
+	  "ALLE HUDTYPER, OGSÅ FØLSOM HUD"
+	]
+  },
+  {
+	"id": "8",
+	"name": "Evening Restorative Complex, 50gr",
+	"price": 399,
+	"stock": 100,
+	"channel": "COSMETIC",
+	"categories": [
+	  "ALLE HUDTYPER, OGSÅ FØLSOM HUD"
+	]
+  },
+  {
+	"id": "9",
+	"name": "Hydrating Eye Complex, 15gr",
+	"price": 399,
+	"stock": 100,
+	"channel": "COSMETIC",
+	"categories": [
+	  "ALLE HUDTYPER, OGSÅ FØLSOM HUD"
+	]
+  },
+  {
+	"id": "10",
+	"name": "Vespera Bionic Serum, 30ml",
+	"price": 599,
+	"stock": 100,
+	"channel": "COSMETIC",
+	"categories": [
+	  "SERUM"
+	]
+  },
+  {
+	"id": "11",
+	"name": "Brightening Serum, 30ml",
+	"price": 479,
+	"stock": 100,
+	"channel": "COSMETIC",
+	"categories": [
+	  "SERUM"
+	]
+  },
+  {
+	"id": "12",
+	"name": "Soothing Recovery Serum, 29gr",
+	"price": 599,
+	"stock": 100,
+	"channel": "COSMETIC",
+	"categories": [
+	  "SERUM"
+	]
+  },
+  {
+	"id": "13",
+	"name": "Total Correct Serum, 30ml",
+	"price": 699,
+	"stock": 100,
+	"channel": "COSMETIC",
+	"categories": [
+	  "SERUM", "TOTAL CORRECT"
+	]
+  },
+  {
+	"id": "14",
+	"name": "Supercharge AOX Serum, 30ml",
+	"price": 599,
+	"stock": 100,
+	"channel": "COSMETIC",
+	"categories": [
+	  "SERUM"
+	]
+  },
+  {
+	"id": "15",
+	"name":"Rejuvenating Treatment Masque, 74ml",
+	"price": 299,
+	"stock": 100,
+	"channel": "COSMETIC",
+	"categories": [
+	  "ANSIGTSMASKE"
+	]
+  },
+  {
+	"id": "16",
+	"name": "Puriying Clay Masque, 50gr",
+	"price": 299,
+	"stock": 100,
+	"channel": "COSMETIC",
+	"categories": [
+	  "ANSIGTSMASKE"
+	]
+  },
+  {
+	"id": "17",
+	"name": "Detox Mud Treatment, 100ml",
+	"price": 449,
+	"stock": 100,
+	"channel": "COSMETIC",
+	"categories": [
+	  "ANSIGTSMASKE"
+	]
+  },
+  {
+	"id": "18",
+	"name": "Glycolic Polish, 75gr",
+	"price": 499,
+	"stock": 100,
+	"channel": "COSMETIC",
+	"categories": [
+	  "ANSIGTSMASKE"
+	]
+  },
+  {
+	"id": "19",
+	"name": "Intensive Eye Treatment Masque, 1 st par",
+	"price": 59,
+	"stock": 100,
+	"channel": "COSMETIC",
+	"categories": [
+	  "ANSIGTSMASKE"
+	]
+  },
+  {
+	"id": "20",
+	"name": "RESTORE PHA Sheet Masque, 1 stk",
+	"price": 120,
+	"stock": 100,
+	"channel": "COSMETIC",
+	"categories": [
+	  "ANSIGTSMASKE"
+	]
+  },
+  {
+	"id": "21",
+	"name": "HYDRATE HA Sheet Masque, 1 stk",
+	"price": 120,
+	"stock": 100,
+	"channel": "COSMETIC",
+	"categories": [
+	  "ANSIGTSMASKE"
+	]
+  },
+  {
+	"id": "22",
+	"name": "Clarifying Facial Cleanser, 212ml",
+	"price": 299,
+	"stock": 100,
+	"channel": "COSMETIC",
+	"categories": [
+	  "SPECIALPRODUKTER"
+	]
+  },
+  {
+	"id": "23",
+	"name": "Clarifying Solution, 100ml",
+	"price": 299,
+	"stock": 100,
+	"channel": "COSMETIC",
+	"categories": [
+	  "SPECIALPRODUKTER"
+	]
+  },
+  {
+	"id": "24",
+	"name": "Clarifying Spot Gel, 15gr",
+	"price": 189,
+	"stock": 100,
+	"channel": "COSMETIC",
+	"categories": [
+	  "SPECIALPRODUKTER"
+	]
+  },
+  {
+	"id": "25",
+	"name": "Retinol Serum, 30ml",
+	"price": 699,
+	"stock": 100,
+	"channel": "COSMETIC",
+	"categories": [
+	  "SPECIALPRODUKTER"
+	]
+  },
+  {
+	"id": "26",
+	"name": "Brightening Bionic Eye Creme Plus, 15gr",
+	"price": 499,
+	"stock": 100,
+	"channel": "COSMETIC",
+	"categories": [
+	  "SPECIALPRODUKTER"
+	]
+  },
+  {
+	"id": "27",
+	"name": "Retinol Eye Creme, 15ml",
+	"price": 599,
+	"stock": 100,
+	"channel": "COSMETIC",
+	"categories": [
+	  "SPECIALPRODUKTER"
+	]
+  },
+  {
+	"id": "28",
+	"name": "Ultra Restorative Creme, 50gr",
+	"price": 499,
+	"stock": 100,
+	"channel": "COSMETIC",
+	"categories": [
+	  "SPECIALPRODUKTER"
+	]
+  },
+  {
+	"id": "29",
+	"name": "Bionic Tonic, 36 st",
+	"price": 379,
+	"stock": 100,
+	"channel": "COSMETIC",
+	"categories": [
+	  "SPECIALPRODUKTER"
+	]
+  },
+  {
+	"id": "30",
+	"name": "Mattifying Fluid, 30gr",
+	"price": 448,
+	"stock": 100,
+	"channel": "COSMETIC",
+	"categories": [
+	  "SPECIALPRODUKTER"
+	]
+  },
+  {
+	"id": "31",
+	"name": "Night Renewal HydraGel, 50gr",
+	"price": 478,
+	"stock": 100,
+	"channel": "COSMETIC",
+	"categories": [
+	  "SPECIALPRODUKTER"
+	]
+  },
+  {
+	"id": "32",
+	"name": "Pedi Peel Dry Skin Repair, 100gr",
+	"price": 298,
+	"stock": 100,
+	"channel": "COSMETIC",
+	"categories": [
+	  "KROP"
+	]
+  },
+  {
+	"id": "33",
+	"name": "Retexturing Treatment, 177ml",
+	"price": 329,
+	"stock": 100,
+	"channel": "COSMETIC",
+	"categories": [
+	  "KROP"
+	]
+  },
+  {
+	"id": "34",
+	"name": "Body Tone Firming Concentrate, 147ml",
+	"price": 549,
+	"stock": 100,
+	"channel": "COSMETIC",
+	"categories": [
+	  "KROP"
+	]
+  },
+  {
+	"id": "35",
+	"name": "Bionic Body Polishing Masque, 150gr",
+	"price": 299,
+	"stock": 100,
+	"channel": "COSMETIC",
+	"categories": [
+	  "KROP"
+	]
+  },
+  {
+	"id": "36",
+	"name": "Triple Action Neck Creme, 50gr",
+	"price": 429,
+	"stock": 100,
+	"channel": "COSMETIC",
+	"categories": [
+	  "KROP"
+	]
+  },
+  {
+	"id": "37",
+	"name": "Sheer Daily Protector SPF 50, 50ml",
+	"price": 399,
+	"stock": 100,
+	"channel": "COSMETIC",
+	"categories": [
+	  "SOL"
+	]
+  },
+  {
+	"id": "38",
+	"name": "Total Correct Wash, 125ml",
+	"price": 349,
+	"stock": 100,
+	"channel": "COSMETIC",
+	"categories": [
+	  "TOTAL CORRECT"
+	]
+  },
+  {
+	"id": "39",
+	"name": "Total Correct Day SPF 30, 50gr",
+	"price": 599,
+	"stock": 100,
+	"channel": "COSMETIC",
+	"categories": [
+	  "TOTAL CORRECT"
+	]
+  },
+  {
+	"id": "40",
+	"name": "Total Correct Night, 50gr",
+	"price": 599,
+	"stock": 100,
+	"channel": "COSMETIC",
+	"categories": [
+	  "TOTAL CORRECT"
+	]
+  },
+  {
+	"id": "41",
+	"name": "Total Correct Hydrate, 50gr",
+	"price": 599,
+	"stock": 100,
+	"channel": "COSMETIC",
+	"categories": [
+	  "TOTAL CORRECT"
+	]
+  },
+  {
+	"id": "42",
+	"name": "Total Correct Eye, 15gr",
+	"price": 599,
+	"stock": 100,
+	"channel": "COSMETIC",
+	"categories": [
+	  "TOTAL CORRECT"
+	]
+  },
+  {
+	"id": "43",
+	"name": "Total Correct Vitamin C Tone Correcting Serum, 15ml",
+	"price": 499,
+	"stock": 100,
+	"channel": "COSMETIC",
+	"categories": [
+	  "TOTAL CORRECT", "SERUM"
+	]
+  },
+  {
+	"id": "44",
+	"name": "Daily Prep, 100ml",
+	"price": 299,
+	"stock": 100,
+	"channel": "COSMETIC",
+	"categories": [
+	  "OPTILIGHT COLLECTION"
+	]
+  },
+  {
+	"id": "45",
+	"name": "Dark Spot Minimizer SPF 35, 40gr",
+	"price": 549,
+	"stock": 100,
+	"channel": "COSMETIC",
+	"categories": [
+	  "OPTILIGHT COLLECTION"
+	]
+  },
+  {
+	"id": "46",
+	"name": "SENSITIV-TØR, 9 produkter",
+	"price": 265,
+	"stock": 100,
+	"channel": "COSMETIC",
+	"categories": [
+	  "STARTKIT/REJSEKIT"
+	]
+  },
+  {
+	"id": "47",
+	"name": "NORMAL-KOMBINERET, 9 produkter",
+	"price": 265,
+	"stock": 100,
+	"channel": "COSMETIC",
+	"categories": [
+	  "STARTKIT/REJSEKIT"
+	]
+  },
+  {
+	"id": "48",
+	"name": "ACNE, 7 produkter",
+	"price": 315,
+	"stock": 100,
+	"channel": "COSMETIC",
+	"categories": [
+	  "STARTKIT/REJSEKIT"
+	]
+  },
+  {
+	"id": "49",
+	"name": "Clinisoothe Skin purifier, 100ml",
+	"price": 225,
+	"stock": 100,
+	"channel": "COSMETIC",
+	"categories": [
+	  "CLINISOOTHE"
+	]
+  },
+  {
+	"id": "50",
+	"name":"Clinisoothe Skin purifier, 250ml",
+	"price": 280,
+	"stock": 100,
+	"channel": "COSMETIC",
+	"categories": [
+	  "CLINISOOTHE"
+	]
+  },
+  {
+	"id": "51",
+	"name": "Heal og Revive Shampoo & Conditioner, 100ml",
+	"price": 109,
+	"stock": 100,
+	"channel": "HAIR_CARE",
+	"categories": [
+	  "SHAMPOO & CONDITIONER"
+	]
+  },
+  {
+	"id": "52",
+	"name": "Heal og Revive Shampoo & Conditioner, 300-350ml",
+	"price": 229,
+	"stock": 100,
+	"channel": "HAIR_CARE",
+	"categories": [
+	  "SHAMPOO & CONDITIONER"
+	]
+  },
+  {
+	"id": "53",
+	"name": "Heal og Revive Shampoo & Conditioner, 1000ml",
+	"price": 589,
+	"stock": 100,
+	"channel": "HAIR_CARE",
+	"categories": [
+	  "SHAMPOO & CONDITIONER"
+	]
+  },
+  {
+	"id": "54",
+	"name": "Heal og Revive Mask, 1stk",
+	"price": 279,
+	"stock": 100,
+	"channel": "HAIR_CARE",
+	"categories": [
+	  "SHAMPOO & CONDITIONER"
+	]
+  },
+  {
+	"id": "55",
+	"name": "Shampoo & Conditioner, 100ml",
+	"price": 109,
+	"stock": 100,
+	"channel": "HAIR_CARE",
+	"categories": [
+	  "SHAMPOO & CONDITIONER"
+	]
+  },
+  {
+	"id": "56",
+	"name": "Shampoo & Conditioner, 300-350ml",
+	"price": 229,
+	"stock": 100,
+	"channel": "HAIR_CARE",
+	"categories": [
+	  "SHAMPOO & CONDITIONER"
+	]
+  },
+  {
+	"id": "57",
+	"name": "Shampoo & Conditioner, 1000ml",
+	"price": 519,
+	"stock": 100,
+	"channel": "HAIR_CARE",
+	"categories": [
+	  "SHAMPOO & CONDITIONER"
+	]
+  },
+  {
+	"id": "58",
+	"name": "Shampoo & Conditioner Mask, 1stk",
+	"price": 239,
+	"stock": 100,
+	"channel": "HAIR_CARE",
+	"categories": [
+	  "SHAMPOO & CONDITIONER"
+	]
+  },
+  {
+	"id": "59",
+	"name": "Shampoo & Conditioner Booster, 1stk",
+	"price": 69,
+	"stock": 100,
+	"channel": "HAIR_CARE",
+	"categories": [
+	  "SHAMPOO & CONDITIONER"
+	]
+  },
+  {
+	"id": "60",
+	"name": "Urban Alchemy Shampoo, 250ml",
+	"price": 159,
+	"stock": 100,
+	"channel": "HAIR_CARE",
+	"categories": [
+	  "SHAMPOO & CONDITIONER"
+	]
+  },
+  {
+	"id": "61",
+	"name": "Urban Alchemy Conditioner, 200ml",
+	"price": 159,
+	"stock": 100,
+	"channel": "HAIR_CARE",
+	"categories": [
+	  "SHAMPOO & CONDITIONER"
+	]
+  },
+  {
+	"id": "62",
+	"name": "Voks, 50ml",
+	"price": 119,
+	"stock": 100,
+	"channel": "HAIR_CARE",
+	"categories": [
+	  "STYLE(VOKS)"
+	]
+  },
+  {
+	"id": "63",
+	"name": "Voks, 100ml",
+	"price": 189,
+	"stock": 100,
+	"channel": "HAIR_CARE",
+	"categories": [
+	  "STYLE(VOKS)"
+	]
+  },
+  {
+	"id": "64",
+	"name": "Pure Volume mousse, 1stk",
+	"price": 105,
+	"stock": 100,
+	"channel": "HAIR_CARE",
+	"categories": [
+	  "STYLE(MOUSSE)"
+	]
+  },
+  {
+	"id": "65",
+	"name": "Styling mouse, 100ml",
+	"price": 45,
+	"stock": 100,
+	"channel": "HAIR_CARE",
+	"categories": [
+	  "STYLE(MOUSSE)"
+	]
+  },
+  {
+	"id": "66",
+	"name": "Styling mouse, 300ml",
+	"price": 60,
+	"stock": 100,
+	"channel": "HAIR_CARE",
+	"categories": [
+	  "STYLE(MOUSSE)"
+	]
+  },
+  {
+	"id": "67",
+	"name": "Styling spray, 100ml",
+	"price": 115,
+	"stock": 100,
+	"channel": "HAIR_CARE",
+	"categories": [
+	  "STYLE(SPRAY & POWDER)"
+	]
+  },
+  {
+	"id": "68",
+	"name": "Styling spray, 400ml",
+	"price": 199,
+	"stock": 100,
+	"channel": "HAIR_CARE",
+	"categories": [
+	  "STYLE(SPRAY & POWDER)"
+	]
+  },
+  {
+	"id": "69",
+	"name": "Finishing spray, 100ml",
+	"price": 115,
+	"stock": 100,
+	"channel": "HAIR_CARE",
+	"categories": [
+	  "STYLE(SPRAY & POWDER)"
+	]
+  },
+  {
+	"id": "70",
+	"name": "Finishing spray, 400ml",
+	"price": 199,
+	"stock": 100,
+	"channel": "HAIR_CARE",
+	"categories": [
+	  "STYLE(SPRAY & POWDER)"
+	]
+  },
+  {
+	"id": "71",
+	"name": "Extreme spray, 100ml",
+	"price": 115,
+	"stock": 100,
+	"channel": "HAIR_CARE",
+	"categories": [
+	  "STYLE(SPRAY & POWDER)"
+	]
+  },
+  {
+	"id": "72",
+	"name": "Extreme spray, 400ml",
+	"price": 199,
+	"stock": 100,
+	"channel": "HAIR_CARE",
+	"categories": [
+	  "STYLE(SPRAY & POWDER)"
+	]
+  },
+  {
+	"id": "73",
+	"name": "Volume spray, 100ml",
+	"price": 115,
+	"stock": 100,
+	"channel": "HAIR_CARE",
+	"categories": [
+	  "STYLE(SPRAY & POWDER)"
+	]
+  },
+  {
+	"id": "74",
+	"name": "Volume spray, 400ml",
+	"price": 199,
+	"stock": 100,
+	"channel": "HAIR_CARE",
+	"categories": [
+	  "STYLE(SPRAY & POWDER)"
+	]
+  },
+  {
+	"id": "75",
+	"name": "Shimmerspray, 100ml",
+	"price": 115,
+	"stock": 100,
+	"channel": "HAIR_CARE",
+	"categories": [
+	  "STYLE(SPRAY & POWDER)"
+	]
+  },
+  {
+	"id": "76",
+	"name": "Shimmerspray, 300ml",
+	"price": 199,
+	"stock": 100,
+	"channel": "HAIR_CARE",
+	"categories": [
+	  "STYLE(SPRAY & POWDER)"
+	]
+  },
+  {
+	"id": "77",
+	"name": "Dry Shampoo, 100ml",
+	"price": 115,
+	"stock": 100,
+	"channel": "HAIR_CARE",
+	"categories": [
+	  "STYLE(SPRAY & POWDER)"
+	]
+  },
+  {
+	"id": "78",
+	"name": "Dry Shampoo, 250ml",
+	"price": 199,
+	"stock": 100,
+	"channel": "HAIR_CARE",
+	"categories": [
+	  "STYLE(SPRAY & POWDER)"
+	]
+  },
+  {
+	"id": "79",
+	"name": "Invisidry spray, 100ml",
+	"price": 115,
+	"stock": 100,
+	"channel": "HAIR_CARE",
+	"categories": [
+	  "STYLE(SPRAY & POWDER)"
+	]
+  },
+  {
+	"id": "80",
+	"name": "Invisidry spray, 250ml",
+	"price": 199,
+	"stock": 100,
+	"channel": "HAIR_CARE",
+	"categories": [
+	  "STYLE(SPRAY & POWDER)"
+	]
+  },
+  {
+	"id": "81",
+	"name": "Salty mist, 1stk",
+	"price": 199,
+	"stock": 100,
+	"channel": "HAIR_CARE",
+	"categories": [
+	  "STYLE(SPRAY & POWDER)"
+	]
+  },
+  {
+	"id": "82",
+	"name": "Ocean spray, 1stk",
+	"price": 199,
+	"stock": 100,
+	"channel": "HAIR_CARE",
+	"categories": [
+	  "STYLE(SPRAY & POWDER)"
+	]
+  },
+  {
+	"id": "83",
+	"name": "Cream heat spray, 1stk",
+	"price": 199,
+	"stock": 100,
+	"channel": "HAIR_CARE",
+	"categories": [
+	  "STYLE(SPRAY & POWDER)"
+	]
+  },
+  {
+	"id": "84",
+	"name": "Quick dry heat spray, 1stk",
+	"price": 199,
+	"stock": 100,
+	"channel": "HAIR_CARE",
+	"categories": [
+	  "STYLE(SPRAY & POWDER)"
+	]
+  },
+  {
+	"id": "85",
+	"name": "Power powder, 1stk",
+	"price": 139,
+	"stock": 100,
+	"channel": "HAIR_CARE",
+	"categories": [
+	  "STYLE(SPRAY & POWDER)"
+	]
+  },
+  {
+	"id": "86",
+	"name": "Cleansing powder, 60g",
+	"price": 109,
+	"stock": 100,
+	"channel": "HAIR_CARE",
+	"categories": [
+	  "STYLE(SPRAY & POWDER)"
+	]
+  },
+  {
+	"id": "87",
+	"name": "Cleansing powder, 120g",
+	"price": 179,
+	"stock": 100,
+	"channel": "HAIR_CARE",
+	"categories": [
+	  "STYLE(SPRAY & POWDER)"
+	]
+  },
+  {
+	"id": "88",
+	"name": "Style Creme, 1stk",
+	"price": 219,
+	"stock": 100,
+	"channel": "HAIR_CARE",
+	"categories": [
+	  "STYLE(SPRAY & POWDER)"
+	]
+  },
+  {
+	"id": "89",
+	"name": "True soft argan oil, 30ml",
+	"price": 95,
+	"stock": 100,
+	"channel": "HAIR_CARE",
+	"categories": [
+	  "STYLE(SPRAY & POWDER)"
+	]
+  },
+  {
+	"id": "90",
+	"name": "True soft argan oil, 100ml",
+	"price": 239,
+	"stock": 100,
+	"channel": "HAIR_CARE",
+	"categories": [
+	  "STYLE(SPRAY & POWDER)"
+	]
+  },
+  {
+	"id": "91",
+	"name": "Structure repair leave in, 1stk",
+	"price": 219,
+	"stock": 100,
+	"channel": "HAIR_CARE",
+	"categories": [
+	  "STYLE(SPRAY & POWDER)"
+	]
+  },
+  {
+	"id": "92",
+	"name": "Styling cream, 1stk",
+	"price": 219,
+	"stock": 100,
+	"channel": "HAIR_CARE",
+	"categories": [
+	  "STYLE(SPRAY & POWDER)"
+	]
+  },
+  {
+	"id": "93",
+	"name": "Curlicue cream, 1stk",
+	"price": 219,
+	"stock": 100,
+	"channel": "HAIR_CARE",
+	"categories": [
+	  "STYLE(SPRAY & POWDER)"
+	]
+  },
+  {
+	"id": "94",
+	"name": "Salty cream, 1stk",
+	"price": 219,
+	"stock": 100,
+	"channel": "HAIR_CARE",
+	"categories": [
+	  "STYLE(SPRAY & POWDER)"
+	]
+  },
+  {
+	"id": "95",
+	"name": "Stardust S, 1stk",
+	"price": 299,
+	"stock": 100,
+	"channel": "HAIR_CARE",
+	"categories": [
+	  "FAN PALM BØRSTER"
+	]
+  },
+  {
+	"id": "96",
+	"name": "Sweet Pea S, 1stk",
+	"price": 299,
+	"stock": 100,
+	"channel": "HAIR_CARE",
+	"categories": [
+	  "FAN PALM BØRSTER"
+	]
+  },
+  {
+	"id": "97",
+	"name": "Paradis S, 1stk",
+	"price": 299,
+	"stock": 100,
+	"channel": "HAIR_CARE",
+	"categories": [
+	  "FAN PALM BØRSTER"
+	]
+  },
+  {
+	"id": "98",
+	"name": "Octopus M, 1stk",
+	"price": 299,
+	"stock": 100,
+	"channel": "HAIR_CARE",
+	"categories": [
+	  "FAN PALM BØRSTER"
+	]
+  },
+  {
+	"id": "99",
+	"name": "Sunshine Yellow M, 1stk",
+	"price": 299,
+	"stock": 100,
+	"channel": "HAIR_CARE",
+	"categories": [
+	  "FAN PALM BØRSTER"
+	]
+  },
+  {
+	"id": "100",
+	"name": "Butterfly M, 1stk",
+	"price": 399,
+	"stock": 100,
+	"channel": "HAIR_CARE",
+	"categories": [
+	  "FAN PALM BØRSTER"
+	]
+  },
+  {
+	"id": "101",
+	"name": "Jungle M, 1stk",
+	"price": 399,
+	"stock": 100,
+	"channel": "HAIR_CARE",
+	"categories": [
+	  "FAN PALM BØRSTER"
+	]
+  },
+  {
+	"id": "102",
+	"name": "Turtle M, 1stk",
+	"price": 399,
+	"stock": 100,
+	"channel": "HAIR_CARE",
+	"categories": [
+	  "FAN PALM BØRSTER"
+	]
+  },
+  {
+	"id": "103",
+	"name": "Mink M, 1stk",
+	"price": 399,
+	"stock": 100,
+	"channel": "HAIR_CARE",
+	"categories": [
+	  "FAN PALM BØRSTER"
+	]
+  },
+  {
+	"id": "104",
+	"name": "Maldives M, 1stk",
+	"price": 399,
+	"stock": 100,
+	"channel": "HAIR_CARE",
+	"categories": [
+	  "FAN PALM BØRSTER"
+	]
+  },
+  {
+	"id": "105",
+	"name": "Blush M, 1stk",
+	"price": 399,
+	"stock": 100,
+	"channel": "HAIR_CARE",
+	"categories": [
+	  "FAN PALM BØRSTER"
+	]
+  },
+  {
+	"id": "106",
+	"name": "Red Poppy M, 1stk",
+	"price": 399,
+	"stock": 100,
+	"channel": "HAIR_CARE",
+	"categories": [
+	  "FAN PALM BØRSTER"
+	]
+  },
+  {
+	"id": "107",
+	"name": "Tortoise Shell M, 1stk",
+	"price": 449,
+	"stock": 100,
+	"channel": "HAIR_CARE",
+	"categories": [
+	  "FAN PALM BØRSTER"
+	]
+  },
+  {
+	"id": "108",
+	"name": "Hollywood M, 1stk",
+	"price": 449,
+	"stock": 100,
+	"channel": "HAIR_CARE",
+	"categories": [
+	  "FAN PALM BØRSTER"
+	]
+  },
+  {
+	"id": "109",
+	"name": "Nude M, 1stk",
+	"price": 449,
+	"stock": 100,
+	"channel": "HAIR_CARE",
+	"categories": [
+	  "FAN PALM BØRSTER"
+	]
+  },
+  {
+	"id": "110",
+	"name": "Wet Bioom L Paddle, 1stk",
+	"price": 499,
+	"stock": 100,
+	"channel": "HAIR_CARE",
+	"categories": [
+	  "FAN PALM BØRSTER"
+	]
+  },
+  {
+	"id": "111",
+	"name": "Stardust L, 1stk",
+	"price": 499,
+	"stock": 100,
+	"channel": "HAIR_CARE",
+	"categories": [
+	  "FAN PALM BØRSTER"
+	]
+  },
+  {
+	"id": "112",
+	"name": "Hair elastikker, 1 stk",
+	"price": 20,
+	"stock": 100,
+	"channel": "HAIR_CARE",
+	"categories": [
+	  "HÅR ACCESSORIES ELASTIKKER"
+	]
+  },
+  {
+	"id": "113",
+	"name": "Hair clamp Emilie Nude, 1stk",
+	"price": 124,
+	"stock": 100,
+	"channel": "HAIR_CARE",
+	"categories": [
+	  "HÅR ACCESSORIES KLEMMER"
+	]
+  },
+  {
+	"id": "114",
+	"name": "Hair clamp Pernille Purple, 1stk",
+	"price": 87,
+	"stock": 100,
+	"channel": "HAIR_CARE",
+	"categories": [
+	  "HÅR ACCESSORIES KLEMMER"
+	]
+  },
+  {
+	"id": "115",
+	"name": "Hair clamp Clara White, 1stk",
+	"price": 87,
+	"stock": 100,
+	"channel": "HAIR_CARE",
+	"categories": [
+	  "HÅR ACCESSORIES KLEMMER"
+	]
+  },
+  {
+	"id": "116",
+	"name": "Hair clamp Mette Orange, 1stk",
+	"price": 74,
+	"stock": 100,
+	"channel": "HAIR_CARE",
+	"categories": [
+	  "HÅR ACCESSORIES KLEMMER"
+	]
+  }
+]

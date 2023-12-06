@@ -37,13 +37,12 @@ Otherwise we recommend you use the deployed backend, which has data on it. You c
 ### Adding dummy data
 1. Go to Postman and check that you have a connection to the server, by sending a request
 ```bash
-GET http://localhost:3000/products?channel=COSMETIC
+GET http://localhost:3000/products
 ```
 2. If you get a response with an empty array, you are good to go. If not, check that the server is running and that you have the correct port.
 3. Get the dummy product data, it is located in
 ```bash
-nextcph-backend/data/cosmetic.products.json
-nextcph-backend/data/haircare.products.json
+nextcph-backend/dummydata/dummy.products.json
 ```
 4. Send a POST request to the server with the data as raw JSON data in the body
 ```bash
@@ -51,18 +50,13 @@ POST http://localhost:3000/products/bulk
 ```
 5. to check if it worked, send a GET request to the server
 ```bash
-GET http://localhost:3000/products?channel=COSMETIC
-```
-or
-```bash
-GET http://localhost:3000/products?channel=HAIRCARE
+GET http://localhost:3000/products
 ```
 Now you should have some products in your database. If you want to add some sale data, follow the steps below.
 
 1. Get the dummy sale data, it is located in
 ```bash
-nextcph-backend/data/cosmetic.sales.json
-nextcph-backend/data/haircare.sales.json
+nextcph-backend/dummydata/dummy.sales.json
 ```
 2. Send a POST request to the server with the data as raw JSON data in the body
 ```bash
@@ -70,10 +64,6 @@ POST http://localhost:3000/sales/bulk
 ```
 3. to check if it worked, send a GET request to the server
 ```bash
-GET http://localhost:3000/sales?channel=COSMETIC
-```
-or
-```bash
-GET http://localhost:3000/sales?channel=HAIRCARE
+GET http://localhost:3000/sales
 ```
 Now you should have some sale data in your database.
