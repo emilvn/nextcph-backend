@@ -1,6 +1,11 @@
 # Next CPH Backend
 ## First year exam project, KEA Datamatiker - December 2023
 
+### Segments
+- [Deployed backend](#deployed-backend)
+- [Installation](#installation)
+- [Adding dummy data](#adding-dummy-data)
+
 ### Deployed backend
 https://nextcph-backend.azurewebsites.net
 
