@@ -13,7 +13,7 @@
     "id": "2",
     "name": "Moisture Balance Toner, 200ml",
     "price": 299,
-    "stock": 10,
+    "stock": 100,
     "channel": "COSMETIC",
     "categories": [
       "NORMAL - KOMBINERET HUD"
@@ -21,7 +21,7 @@
   },
   {
     "id": "3",
-    "name": "Sheer Refining Fluid, SPF 40, 50ml",
+    "name": "Sheer Refining Fluid SPF 40, 50ml",
     "price": 399,
     "stock": 13,
     "channel": "COSMETIC",
@@ -33,7 +33,7 @@
     "id": "4",
     "name": "Essential Daily Defense Creme SPF 20, 50gr",
     "price": 399,
-    "stock": 10,
+    "stock": 100,
     "channel": "COSMETIC",
     "categories": [
       "NORMAL - KOMBINERET HUD"
@@ -43,7 +43,7 @@
     "id": "5",
     "name": "Gentle Cleansing Creme, 212ml",
     "price": 299,
-    "stock": 10,
+    "stock": 100,
     "channel": "COSMETIC",
     "categories": [
       "ALLE HUDTYPER, OGSÅ FØLSOM HUD"
@@ -53,7 +53,7 @@
     "id": "6",
     "name": "Soothing Toning Lotion, 200ml",
     "price": 299,
-    "stock": 10,
+    "stock": 100,
     "channel": "COSMETIC",
     "categories": [
       "ALLE HUDTYPER, OGSÅ FØLSOM HUD"
@@ -61,9 +61,9 @@
   },
   {
     "id": "7",
-    "name": "Multi-Protective Day Creme, SPF 20, 50gr",
+    "name": "Multi-Protective Day Creme SPF 20, 50gr",
     "price": 399,
-    "stock": 10,
+    "stock": 100,
     "channel": "COSMETIC",
     "categories": [
       "ALLE HUDTYPER, OGSÅ FØLSOM HUD"
@@ -73,7 +73,7 @@
     "id": "8",
     "name": "Evening Restorative Complex, 50gr",
     "price": 399,
-    "stock": 10,
+    "stock": 100,
     "channel": "COSMETIC",
     "categories": [
       "ALLE HUDTYPER, OGSÅ FØLSOM HUD"
@@ -83,7 +83,7 @@
     "id": "9",
     "name": "Hydrating Eye Complex, 15gr",
     "price": 399,
-    "stock": 10,
+    "stock": 100,
     "channel": "COSMETIC",
     "categories": [
       "ALLE HUDTYPER, OGSÅ FØLSOM HUD"
@@ -93,7 +93,7 @@
     "id": "10",
     "name": "Vespera Bionic Serum, 30ml",
     "price": 599,
-    "stock": 10,
+    "stock": 100,
     "channel": "COSMETIC",
     "categories": [
       "SERUM"
@@ -103,7 +103,7 @@
     "id": "11",
     "name": "Brightening Serum, 30ml",
     "price": 479,
-    "stock": 10,
+    "stock": 100,
     "channel": "COSMETIC",
     "categories": [
       "SERUM"
@@ -113,7 +113,7 @@
     "id": "12",
     "name": "Soothing Recovery Serum, 29gr",
     "price": 599,
-    "stock": 10,
+    "stock": 100,
     "channel": "COSMETIC",
     "categories": [
       "SERUM"
@@ -123,7 +123,7 @@
     "id": "13",
     "name": "Total Correct Serum, 30ml",
     "price": 699,
-    "stock": 10,
+    "stock": 100,
     "channel": "COSMETIC",
     "categories": [
       "SERUM", "TOTAL CORRECT"
@@ -133,7 +133,7 @@
     "id": "14",
     "name": "Supercharge AOX Serum, 30ml",
     "price": 599,
-    "stock": 10,
+    "stock": 100,
     "channel": "COSMETIC",
     "categories": [
       "SERUM"
@@ -143,7 +143,7 @@
     "id": "15",
     "name":"Rejuvenating Treatment Masque, 74ml",
     "price": 299,
-    "stock": 10,
+    "stock": 100,
     "channel": "COSMETIC",
     "categories": [
       "ANSIGTSMASKE"
@@ -153,7 +153,7 @@
     "id": "16",
     "name": "Puriying Clay Masque, 50gr",
     "price": 299,
-    "stock": 10,
+    "stock": 100,
     "channel": "COSMETIC",
     "categories": [
       "ANSIGTSMASKE"
@@ -163,7 +163,7 @@
     "id": "17",
     "name": "Detox Mud Treatment, 100ml",
     "price": 449,
-    "stock": 10,
+    "stock": 100,
     "channel": "COSMETIC",
     "categories": [
       "ANSIGTSMASKE"
@@ -173,7 +173,7 @@
     "id": "18",
     "name": "Glycolic Polish, 75gr",
     "price": 499,
-    "stock": 10,
+    "stock": 100,
     "channel": "COSMETIC",
     "categories": [
       "ANSIGTSMASKE"
@@ -183,7 +183,7 @@
     "id": "19",
     "name": "Intensive Eye Treatment Masque, 1 st par",
     "price": 59,
-    "stock": 10,
+    "stock": 100,
     "channel": "COSMETIC",
     "categories": [
       "ANSIGTSMASKE"
@@ -193,7 +193,7 @@
     "id": "20",
     "name": "RESTORE PHA Sheet Masque, 1 stk",
     "price": 120,
-    "stock": 10,
+    "stock": 100,
     "channel": "COSMETIC",
     "categories": [
       "ANSIGTSMASKE"
@@ -203,7 +203,7 @@
     "id": "21",
     "name": "HYDRATE HA Sheet Masque, 1 stk",
     "price": 120,
-    "stock": 10,
+    "stock": 100,
     "channel": "COSMETIC",
     "categories": [
       "ANSIGTSMASKE"
@@ -213,7 +213,7 @@
     "id": "22",
     "name": "Clarifying Facial Cleanser, 212ml",
     "price": 299,
-    "stock": 10,
+    "stock": 100,
     "channel": "COSMETIC",
     "categories": [
       "SPECIALPRODUKTER"
@@ -223,7 +223,7 @@
     "id": "23",
     "name": "Clarifying Solution, 100ml",
     "price": 299,
-    "stock": 10,
+    "stock": 100,
     "channel": "COSMETIC",
     "categories": [
       "SPECIALPRODUKTER"
@@ -233,7 +233,7 @@
     "id": "24",
     "name": "Clarifying Spot Gel, 15gr",
     "price": 189,
-    "stock": 10,
+    "stock": 100,
     "channel": "COSMETIC",
     "categories": [
       "SPECIALPRODUKTER"
@@ -243,7 +243,7 @@
     "id": "25",
     "name": "Retinol Serum, 30ml",
     "price": 699,
-    "stock": 10,
+    "stock": 100,
     "channel": "COSMETIC",
     "categories": [
       "SPECIALPRODUKTER"
@@ -253,7 +253,7 @@
     "id": "26",
     "name": "Brightening Bionic Eye Creme Plus, 15gr",
     "price": 499,
-    "stock": 10,
+    "stock": 100,
     "channel": "COSMETIC",
     "categories": [
       "SPECIALPRODUKTER"
@@ -263,7 +263,7 @@
     "id": "27",
     "name": "Retinol Eye Creme, 15ml",
     "price": 599,
-    "stock": 10,
+    "stock": 100,
     "channel": "COSMETIC",
     "categories": [
       "SPECIALPRODUKTER"
@@ -273,7 +273,7 @@
     "id": "28",
     "name": "Ultra Restorative Creme, 50gr",
     "price": 499,
-    "stock": 10,
+    "stock": 100,
     "channel": "COSMETIC",
     "categories": [
       "SPECIALPRODUKTER"
@@ -283,7 +283,7 @@
     "id": "29",
     "name": "Bionic Tonic, 36 st",
     "price": 379,
-    "stock": 10,
+    "stock": 100,
     "channel": "COSMETIC",
     "categories": [
       "SPECIALPRODUKTER"
@@ -293,7 +293,7 @@
     "id": "30",
     "name": "Mattifying Fluid, 30gr",
     "price": 448,
-    "stock": 10,
+    "stock": 100,
     "channel": "COSMETIC",
     "categories": [
       "SPECIALPRODUKTER"
@@ -303,7 +303,7 @@
     "id": "31",
     "name": "Night Renewal HydraGel, 50gr",
     "price": 478,
-    "stock": 10,
+    "stock": 100,
     "channel": "COSMETIC",
     "categories": [
       "SPECIALPRODUKTER"
@@ -313,7 +313,7 @@
     "id": "32",
     "name": "Pedi Peel Dry Skin Repair, 100gr",
     "price": 298,
-    "stock": 10,
+    "stock": 100,
     "channel": "COSMETIC",
     "categories": [
       "KROP"
@@ -323,7 +323,7 @@
     "id": "33",
     "name": "Retexturing Treatment, 177ml",
     "price": 329,
-    "stock": 10,
+    "stock": 100,
     "channel": "COSMETIC",
     "categories": [
       "KROP"
@@ -333,7 +333,7 @@
     "id": "34",
     "name": "Body Tone Firming Concentrate, 147ml",
     "price": 549,
-    "stock": 10,
+    "stock": 100,
     "channel": "COSMETIC",
     "categories": [
       "KROP"
@@ -343,7 +343,7 @@
     "id": "35",
     "name": "Bionic Body Polishing Masque, 150gr",
     "price": 299,
-    "stock": 10,
+    "stock": 100,
     "channel": "COSMETIC",
     "categories": [
       "KROP"
@@ -353,7 +353,7 @@
     "id": "36",
     "name": "Triple Action Neck Creme, 50gr",
     "price": 429,
-    "stock": 10,
+    "stock": 100,
     "channel": "COSMETIC",
     "categories": [
       "KROP"
@@ -363,7 +363,7 @@
     "id": "37",
     "name": "Sheer Daily Protector SPF 50, 50ml",
     "price": 399,
-    "stock": 10,
+    "stock": 100,
     "channel": "COSMETIC",
     "categories": [
       "SOL"
@@ -373,7 +373,7 @@
     "id": "38",
     "name": "Total Correct Wash, 125ml",
     "price": 349,
-    "stock": 10,
+    "stock": 100,
     "channel": "COSMETIC",
     "categories": [
       "TOTAL CORRECT"
@@ -381,9 +381,9 @@
   },
   {
     "id": "39",
-    "name": "Total Correct Day, SPF 30, 50gr",
+    "name": "Total Correct Day SPF 30, 50gr",
     "price": 599,
-    "stock": 10,
+    "stock": 100,
     "channel": "COSMETIC",
     "categories": [
       "TOTAL CORRECT"
@@ -393,7 +393,7 @@
     "id": "40",
     "name": "Total Correct Night, 50gr",
     "price": 599,
-    "stock": 10,
+    "stock": 100,
     "channel": "COSMETIC",
     "categories": [
       "TOTAL CORRECT"
@@ -403,7 +403,7 @@
     "id": "41",
     "name": "Total Correct Hydrate, 50gr",
     "price": 599,
-    "stock": 10,
+    "stock": 100,
     "channel": "COSMETIC",
     "categories": [
       "TOTAL CORRECT"
@@ -413,7 +413,7 @@
     "id": "42",
     "name": "Total Correct Eye, 15gr",
     "price": 599,
-    "stock": 10,
+    "stock": 100,
     "channel": "COSMETIC",
     "categories": [
       "TOTAL CORRECT"
@@ -423,7 +423,7 @@
     "id": "43",
     "name": "Total Correct Vitamin C Tone Correcting Serum, 15ml",
     "price": 499,
-    "stock": 10,
+    "stock": 100,
     "channel": "COSMETIC",
     "categories": [
       "TOTAL CORRECT", "SERUM"
@@ -433,7 +433,7 @@
     "id": "44",
     "name": "Daily Prep, 100ml",
     "price": 299,
-    "stock": 10,
+    "stock": 100,
     "channel": "COSMETIC",
     "categories": [
       "OPTILIGHT COLLECTION"
@@ -441,9 +441,9 @@
   },
   {
     "id": "45",
-    "name": "Dark Spot Minimizer, SPF 35, 40gr",
+    "name": "Dark Spot Minimizer SPF 35, 40gr",
     "price": 549,
-    "stock": 10,
+    "stock": 100,
     "channel": "COSMETIC",
     "categories": [
       "OPTILIGHT COLLECTION"
@@ -453,7 +453,7 @@
     "id": "46",
     "name": "SENSITIV-TØR, 9 produkter",
     "price": 265,
-    "stock": 10,
+    "stock": 100,
     "channel": "COSMETIC",
     "categories": [
       "STARTKIT/REJSEKIT"
@@ -463,7 +463,7 @@
     "id": "47",
     "name": "NORMAL-KOMBINERET, 9 produkter",
     "price": 265,
-    "stock": 10,
+    "stock": 100,
     "channel": "COSMETIC",
     "categories": [
       "STARTKIT/REJSEKIT"
@@ -473,7 +473,7 @@
     "id": "48",
     "name": "ACNE, 7 produkter",
     "price": 315,
-    "stock": 10,
+    "stock": 100,
     "channel": "COSMETIC",
     "categories": [
       "STARTKIT/REJSEKIT"
@@ -483,7 +483,7 @@
     "id": "49",
     "name": "Clinisoothe Skin purifier, 100ml",
     "price": 225,
-    "stock": 10,
+    "stock": 100,
     "channel": "COSMETIC",
     "categories": [
       "CLINISOOTHE"
@@ -493,7 +493,7 @@
     "id": "50",
     "name":"Clinisoothe Skin purifier, 250ml",
     "price": 280,
-    "stock": 10,
+    "stock": 100,
     "channel": "COSMETIC",
     "categories": [
       "CLINISOOTHE"
