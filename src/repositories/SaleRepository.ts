@@ -116,7 +116,6 @@ class SaleRepository extends Repository {
 
 	public create = async (data: INewSale) => {
 		const { created_at, user_id, products } = data;
-
 		const createdSale = await this.db.$transaction(async (prisma) => {
 			//create sale
 			const newSale = await prisma.sale.create({
