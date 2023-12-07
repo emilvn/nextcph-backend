@@ -104,7 +104,7 @@ class SaleController extends Controller {
         }
     }
 
-    public getDashboardOverview = async (req: Request, res: Response, next: NextFunction) => {
+    public getStatistics = async (req: Request, res: Response, next: NextFunction) => {
         try {
             const { channel } = req.query;
             const channelParam = RequiredChannelSchema.parse(channel);
@@ -184,7 +184,7 @@ class SaleController extends Controller {
         {
             path: '/statistics',
             method: Method.GET,
-            handler: this.getDashboardOverview,
+            handler: this.getStatistics,
         },
         {
             path: '/:id',
