@@ -6,7 +6,7 @@ import type { INewSale } from "../types/types";
 import SaleRepository from "../repositories/SaleRepository";
 import {RequiredChannelSchema, NewSaleSchema, DateSchema, OptionalChannelSchema} from "../validation/schemas";
 import CategoryRepository from "../repositories/CategoryRepository";
-import {setDateToLastDayOfMonth} from "../helpers/dates";
+import {getAmountOfDaysInMonth, setDateToLastDayOfMonth} from "../helpers/dates";
 
 class SaleController extends Controller {
     path: string = "/sales";
@@ -118,8 +118,7 @@ class SaleController extends Controller {
             }
 
             const monthParam = DateSchema.parse(month);
-            const endOfMonth = setDateToLastDayOfMonth(monthParam);
-            const rawSalesData = await this.repository.getByMonth(endOfMonth, channelParam);
+            const rawSalesData = await this.repository.getByMonth(monthParam, channelParam);
 
             let categories: { name: string; total?: number }[] = [];
             const categoryRepository = new CategoryRepository(this.repository.db);
@@ -149,8 +148,7 @@ class SaleController extends Controller {
 
             totalRevenue = categories.reduce((acc, category) => (acc + (category.total || 0)), 0);
 
-            const daysInMonth = endOfMonth.getDate();
-            console.log(daysInMonth);
+            const daysInMonth = getAmountOfDaysInMonth(monthParam);
 
             const averageDailySales = totalSales / daysInMonth;
             const averageDailyRevenue = totalRevenue / daysInMonth;
