@@ -6,7 +6,7 @@ import type { INewSale } from "../types/types";
 import SaleRepository from "../repositories/SaleRepository";
 import {RequiredChannelSchema, NewSaleSchema, DateSchema, OptionalChannelSchema} from "../validation/schemas";
 import CategoryRepository from "../repositories/CategoryRepository";
-import {getAmountOfDaysInMonth, setDateToLastDayOfMonth} from "../helpers/dates";
+import {getAmountOfDaysInMonth} from "../helpers/dates";
 
 class SaleController extends Controller {
     path: string = "/sales";
@@ -118,6 +118,7 @@ class SaleController extends Controller {
             }
 
             const monthParam = DateSchema.parse(month);
+            monthParam.setDate(1);
             const rawSalesData = await this.repository.getByMonth(monthParam, channelParam);
 
             let categories: { name: string; total?: number }[] = [];
