@@ -5,6 +5,8 @@ import type { PrismaClient } from "@prisma/client";
 import type { INewSale } from "../types/types";
 import SaleRepository from "../repositories/SaleRepository";
 import {RequiredChannelSchema, NewSaleSchema, DateSchema, OptionalChannelSchema} from "../validation/schemas";
+import CategoryRepository from "../repositories/CategoryRepository";
+import {setDateToLastDayOfMonth} from "../helpers/dates";
 
 class SaleController extends Controller {
     path: string = "/sales";
@@ -116,10 +118,12 @@ class SaleController extends Controller {
             }
 
             const monthParam = DateSchema.parse(month);
-            const rawSalesData = await this.repository.getByMonth(monthParam, channelParam);
+            const endOfMonth = setDateToLastDayOfMonth(monthParam);
+            const rawSalesData = await this.repository.getByMonth(endOfMonth, channelParam);
 
-            let Categories: { name: string; total?: number }[] = [];
-            Categories = await this.repository.getCategoryNames(channelParam);
+            let categories: { name: string; total?: number }[] = [];
+            const categoryRepository = new CategoryRepository(this.repository.db);
+            categories = await categoryRepository.getNames(channelParam);
 
             let totalSales = 0 ;
             let totalRevenue = 0;
@@ -129,7 +133,7 @@ class SaleController extends Controller {
 
                 sale.products.forEach((saleProduct) => {
                     const product = saleProduct.product;
-                    const matchingCategory = Categories.find((category) => {
+                    const matchingCategory = categories.find((category) => {
                         const currentCategoryName = category.name;
                         return product?.categories.some((c) => c.category.name === currentCategoryName)
                     });
@@ -143,14 +147,15 @@ class SaleController extends Controller {
                 });
             });
 
-            totalRevenue = Categories.reduce((acc, category) => (acc + (category.total || 0)), 0);
+            totalRevenue = categories.reduce((acc, category) => (acc + (category.total || 0)), 0);
 
-            const daysInMonth = new Date(monthParam).getUTCDate();
+            const daysInMonth = endOfMonth.getDate();
+            console.log(daysInMonth);
 
             const averageDailySales = totalSales / daysInMonth;
             const averageDailyRevenue = totalRevenue / daysInMonth;
 
-            const categoriesWithPercentage = Categories.map(category => ({
+            const categoriesWithPercentage = categories.map(category => ({
                 name: category.name,
                 total: category.total || 0,
                 percentage: (category.total || 0) / totalRevenue * 100
