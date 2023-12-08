@@ -24,11 +24,10 @@ class SaleController extends Controller {
 
             const salesData = await this.repository
 				.getAll(channelParam, Number(page), Number(pageSize), userIdParam);
-
-			if(salesData.data.length === 0) {
-                res.status(404).send("No sales found");
+            if(salesData.data.length === 0) {
+                res.status(204).send("No sales yet");
             }
-            else {
+            else{
                 res.json(salesData);
             }
         } catch (e) {
@@ -49,11 +48,10 @@ class SaleController extends Controller {
 			const monthParam = DateSchema.parse(month);
 			const sales = await this.repository.getByMonth(monthParam, channelParam);
 			if (sales.length === 0) {
-				res.status(404).send("No sales found");
-			}
-			else {
-				res.json(sales);
-			}
+				res.status(204).send(sales);
+			}else{
+                res.json(sales);
+            }
 		} catch (e) {
 			next(e);
 		}
@@ -65,7 +63,7 @@ class SaleController extends Controller {
             const sale = await this.repository.getById(id);
 
             if (!sale) {
-                res.status(404).send("No sale found");
+                res.status(404).send("No sale found with id: " + id);
             }
             else {
                 res.json(sale);
