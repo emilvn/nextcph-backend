@@ -45,6 +45,17 @@ class ProductController extends Controller{
 		}
 	}
 
+	public getLowStock = async (req:Request, res:Response, next:NextFunction) => {
+		try{
+			const {channel} = req.query;
+			const channelParam = OptionalChannelSchema.parse(channel);
+			const productsWithCategories = await this.repository.getLowStock(channelParam);
+			res.json(productsWithCategories);
+		}catch(e){
+			next(e);
+		}
+	}
+
 	public create = async (req:Request, res:Response, next:NextFunction) => {
 		try{
 			const data:INewProduct = NewProductSchema.parse(req.body);
@@ -98,6 +109,11 @@ class ProductController extends Controller{
 			path: '/:id',
 			method: Method.GET,
 			handler: this.getById
+		},
+		{
+			path: '/lowstock',
+			method: Method.GET,
+			handler: this.getLowStock
 		},
 		{
 			path: '/',

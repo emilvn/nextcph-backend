@@ -37,7 +37,7 @@ class ProductRepository extends Repository{
 		return this.db.product.findMany({
 			where: {
 				stock: {
-					lt: this.db.product.min_stock
+					lt: this.db.product.fields.min_stock
 				},
 				channel: channel
 			},
