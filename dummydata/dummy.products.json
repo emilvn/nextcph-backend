@@ -4,6 +4,8 @@
 		"name":"Purifying Cleansing Gel, 212ml",
 		"price": 299,
 		"stock": 15,
+		"min_stock": 10,
+		"max_stock": 100,
 		"channel": "COSMETIC",
 		"categories":[
 			"NORMAL - KOMBINERET HUD"
@@ -26,6 +28,8 @@
 		"name": "Sheer Refining Fluid SPF 40, 50ml",
 		"price": 399,
 		"stock": 13,
+		"min_stock": 10,
+		"max_stock": 100,
 		"channel": "COSMETIC",
 		"categories": [
 			"NORMAL - KOMBINERET HUD", "ALLE HUDTYPER, OGSÅ FØLSOM HUD"
