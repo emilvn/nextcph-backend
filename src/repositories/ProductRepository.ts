@@ -32,11 +32,28 @@ class ProductRepository extends Repository{
 			}
 		});
 	}
+
+	public getLowStock = (channel?: ChannelType) => {
+		return this.db.product.findMany({
+			where: {
+				stock: {
+					lt: this.db.product.min_stock
+				},
+				channel: channel
+			},
+			include: {
+				categories: {
+					select: { category: true }
+				}
+			}
+		});
+	}
+
 	public create = (data: INewProduct) => {
-		const {id, name, price, stock, channel, categories} = data;
+		const {id, name, price, stock, channel, categories, min_stock, max_stock} = data;
 		return this.db.product.create({
 			data: {
-				id, name, price, stock, channel,
+				id, name, price, stock, channel, min_stock, max_stock,
 				categories: {
 					create: categories.map((categoryName) => ({
 						category: {
@@ -77,12 +94,14 @@ class ProductRepository extends Repository{
 
 	}
 	public update = (id: string, data: IUpdateProduct) => {
-		const {name, price, stock, channel} = data;
+		const {name, price, stock, channel, min_stock, max_stock} = data;
 		const UpdateData:Record<string, any> = {};
 		if(name !== undefined) UpdateData.name = name;
 		if(price !== undefined) UpdateData.price = price;
 		if(stock !== undefined) UpdateData.stock = stock;
 		if(channel !== undefined) UpdateData.channel = channel;
+		if(min_stock !== undefined) UpdateData.min_stock = min_stock;
+		if(max_stock !== undefined) UpdateData.max_stock = max_stock;
 
 		return this.db.product.update({
 			where: { id: id },

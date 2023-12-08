@@ -2,64 +2,66 @@
 // learn more about it in the docs: https://pris.ly/d/prisma-schema
 
 generator client {
-    provider = "prisma-client-js"
+	provider = "prisma-client-js"
 }
 
 datasource db {
-    provider = "mysql"
-    url      = env("DATABASE_URL")
+	provider = "mysql"
+	url      = env("DATABASE_URL")
 }
 
 enum ChannelType {
-    COSMETIC
-    HAIR_CARE
+	COSMETIC
+	HAIR_CARE
 }
 
 model Product {
-    id         String            @id @default(cuid())
-    name       String            @unique
-    price      Float
-    stock      Int
-    channel    ChannelType
-    categories ProductCategory[]
-    sales      SaleProduct[]
-    created_at DateTime          @default(now())
-    updated_at DateTime          @updatedAt
+	id         String            @id @default(cuid())
+	name       String            @unique
+	price      Float
+	stock      Int
+	min_stock  Int
+	max_stock  Int
+	channel    ChannelType
+	categories ProductCategory[]
+	sales      SaleProduct[]
+	created_at DateTime          @default(now())
+	updated_at DateTime          @updatedAt
 }
 
 model ProductCategory {
-    id          String   @id @default(cuid())
-    product_id  String
-    category_id String
-    product     Product  @relation(fields: [product_id], references: [id], onDelete: Cascade)
-    category    Category @relation(fields: [category_id], references: [id], onDelete: Cascade)
+	id          String   @id @default(cuid())
+	product_id  String
+	category_id String
+	product     Product  @relation(fields: [product_id], references: [id], onDelete: Cascade)
+	category    Category @relation(fields: [category_id], references: [id], onDelete: Cascade)
 }
 
 model Category {
-    id         String            @id @default(cuid())
-    name       String            @unique
-    products   ProductCategory[]
-    channel    ChannelType
-    created_at DateTime          @default(now())
-    updated_at DateTime          @updatedAt
+	id         String            @id @default(cuid())
+	name       String            @unique
+	products   ProductCategory[]
+	channel    ChannelType
+	created_at DateTime          @default(now())
+	updated_at DateTime          @updatedAt
 }
 
 model Sale {
-    id         String        @id @default(cuid())
-    user_id    String
-    created_at DateTime      @default(now())
-    products   SaleProduct[]
+	id         String        @id @default(cuid())
+	user_id    String
+	created_at DateTime      @default(now())
+	products   SaleProduct[]
 
-    @@index([user_id], name: "user_id")
+	@@index([user_id], name: "user_id")
 }
 
 model SaleProduct {
-    id               String  @id @default(cuid())
-    sale_id          String
-    product_id       String
-    product_quantity Int
-    sale             Sale    @relation(fields: [sale_id], references: [id], onDelete: Cascade)
-    product          Product @relation(fields: [product_id], references: [id], onDelete: Cascade)
+	id               String  @id @default(cuid())
+	sale_id          String
+	product_id       String
+	product_quantity Int
+	sale             Sale    @relation(fields: [sale_id], references: [id], onDelete: Cascade)
+	product          Product @relation(fields: [product_id], references: [id], onDelete: Cascade)
 
-    @@unique([sale_id, product_id])
+	@@unique([sale_id, product_id])
 }
