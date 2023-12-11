@@ -156,11 +156,15 @@ class SaleController extends Controller {
                 channelParam
             );
 
-            let categories: { name: string; total?: number }[] = [];
             const categoryRepository = new CategoryRepository(
                 this.repository.db
             );
-            categories = await categoryRepository.getNames(channelParam);
+            const categories = await categoryRepository.getNames(channelParam);
+            const categoriesWithStats = categories.map((category) => ({
+                name: category.name,
+                total: 0,
+                quantity: 0
+            }));
 
             let totalSales = 0;
             let totalRevenue = 0;
@@ -170,26 +174,30 @@ class SaleController extends Controller {
 
                 sale.products.forEach((saleProduct) => {
                     const product = saleProduct.product;
-                    const matchingCategory = categories.find((category) => {
-                        const currentCategoryName = category.name;
-                        return product?.categories.some(
-                            (c) => c.category.name === currentCategoryName
-                        );
-                    });
+                    const matchingCategory = categoriesWithStats.find(
+                        (category) => {
+                            const currentCategoryName = category.name;
+                            return product?.categories.some(
+                                (c) => c.category.name === currentCategoryName
+                            );
+                        }
+                    );
                     if (matchingCategory) {
                         const productPrice = product?.price || 0;
                         const productQuantity =
                             saleProduct.product_quantity || 0;
 
                         matchingCategory.total =
-                            (matchingCategory.total || 0) +
+                            matchingCategory.total +
                             productPrice * productQuantity;
+                        matchingCategory.quantity =
+                            matchingCategory.quantity + productQuantity;
                         totalRevenue += productPrice * productQuantity;
                     }
                 });
             });
 
-            totalRevenue = categories.reduce(
+            totalRevenue = categoriesWithStats.reduce(
                 (acc, category) => acc + (category.total || 0),
                 0
             );
@@ -198,16 +206,28 @@ class SaleController extends Controller {
 
             const averageDailySales = totalSales / daysInMonth;
             const averageDailyRevenue = totalRevenue / daysInMonth;
+            const totalProductsSold = categoriesWithStats.reduce(
+                (acc, category) => acc + category.quantity,
+                0
+            );
 
-            const categoriesWithPercentage = categories.map((category) => ({
-                name: category.name,
-                total: category.total || 0,
-                percentage: ((category.total || 0) / totalRevenue) * 100 || 0
-            }));
+            const categoriesWithPercentage = categoriesWithStats.map(
+                (category) => ({
+                    name: category.name,
+                    total: category.total || 0,
+                    quantity: category.quantity || 0,
+                    percentageOfTotalRevenue:
+                        ((category.total || 0) / totalRevenue) * 100 || 0,
+                    percentageOfTotalProductsSold:
+                        ((category.quantity || 0) / totalProductsSold) * 100 ||
+                        0
+                })
+            );
 
             const dashboardOverview = {
                 totalRevenue: totalRevenue,
                 totalSales: totalSales,
+                totalProductsSold: totalProductsSold,
                 averageDailySales: averageDailySales,
                 averageDailyRevenue: averageDailyRevenue,
                 categories: categoriesWithPercentage
