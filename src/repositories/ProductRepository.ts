@@ -35,7 +35,6 @@ class ProductRepository extends Repository {
     };
 
     public getLowStock = (channel?: ChannelType) => {
-        console.log("test");
         return this.db.product.findMany({
             where: {
                 stock: {
