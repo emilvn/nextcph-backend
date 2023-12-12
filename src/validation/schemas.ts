@@ -68,10 +68,13 @@ const OptionalChannelSchema = z
 
 const DateSchema = z.coerce.date();
 
+const LowStockSchema = z.coerce.boolean().optional();
+
 export {
     NewProductSchema,
     RequiredChannelSchema,
     NewSaleSchema,
     DateSchema,
-    OptionalChannelSchema
+    OptionalChannelSchema,
+    LowStockSchema
 };

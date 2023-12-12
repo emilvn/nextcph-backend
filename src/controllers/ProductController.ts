@@ -4,7 +4,11 @@ import type { Request, Response, NextFunction } from "express";
 import type { PrismaClient } from "@prisma/client";
 import type { INewProduct } from "../types/types";
 import ProductRepository from "../repositories/ProductRepository";
-import { NewProductSchema, OptionalChannelSchema } from "../validation/schemas";
+import {
+    LowStockSchema,
+    NewProductSchema,
+    OptionalChannelSchema
+} from "../validation/schemas";
 
 class ProductController extends Controller {
     path: string = "/products";
@@ -16,12 +20,17 @@ class ProductController extends Controller {
 
     public getAll = async (req: Request, res: Response, next: NextFunction) => {
         try {
-            const { channel } = req.query;
+            const { channel, low_stock } = req.query;
             const channelParam = OptionalChannelSchema.parse(channel);
-            const productsWithCategories =
-                await this.repository.getAll(channelParam);
-            if (productsWithCategories.length === 0) {
+            const lowStockParam = LowStockSchema.parse(low_stock);
+            const productsWithCategories = await this.repository.getAll(
+                channelParam,
+                lowStockParam
+            );
+            if (productsWithCategories.length === 0 && !lowStockParam) {
                 res.status(404).send("No products found");
+            } else if (productsWithCategories.length === 0 && lowStockParam) {
+                res.status(204).send("No low stock products found");
             } else {
                 res.json(productsWithCategories);
             }
@@ -40,22 +49,6 @@ class ProductController extends Controller {
             const productWithCategories = await this.repository.getById(id);
             if (!productWithCategories) res.status(404).send("Not found");
             else res.json(productWithCategories);
-        } catch (e) {
-            next(e);
-        }
-    };
-
-    public getLowStock = async (
-        req: Request,
-        res: Response,
-        next: NextFunction
-    ) => {
-        try {
-            const { channel } = req.query;
-            const channelParam = OptionalChannelSchema.parse(channel);
-            const productsWithCategories =
-                await this.repository.getLowStock(channelParam);
-            res.json(productsWithCategories);
         } catch (e) {
             next(e);
         }
@@ -115,11 +108,6 @@ class ProductController extends Controller {
             path: "/",
             method: Method.GET,
             handler: this.getAll
-        },
-        {
-            path: "/lowstock",
-            method: Method.GET,
-            handler: this.getLowStock
         },
         {
             path: "/:id",

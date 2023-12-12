@@ -8,7 +8,8 @@ class ProductRepository extends Repository {
         this.db = db;
     }
 
-    public getAll = (channel?: ChannelType) => {
+    public getAll = (channel?: ChannelType, lowStock?: boolean) => {
+        if (lowStock) return this.getLowStock(channel);
         return this.db.product.findMany({
             where: {
                 channel: channel
@@ -34,6 +35,7 @@ class ProductRepository extends Repository {
     };
 
     public getLowStock = (channel?: ChannelType) => {
+        console.log("test");
         return this.db.product.findMany({
             where: {
                 stock: {
