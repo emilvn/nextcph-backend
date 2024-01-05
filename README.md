@@ -7,7 +7,7 @@
 - [Adding dummy data](#adding-dummy-data)
 
 ### Deployed backend
-https://nextcph-backend.azurewebsites.net
+-
 
 ### Running the backend locally
 1. Clone the repository
@@ -37,7 +37,6 @@ npm run dev
 
 Now the backend should be running. However there will be no data in the database, as you are using your own development database. 
 If you want to get some data on your database, we have some dummy product and saledata you can add. To do this, follow the steps below.
-Otherwise we recommend you use the deployed backend, which has data on it. You can find it here: https://nextcph-backend.azurewebsites.net
 
 ### Adding dummy data
 1. Go to Postman and check that you have a connection to the server, by sending a request
